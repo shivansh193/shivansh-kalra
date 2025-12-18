@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Hiring Assistant",
+        "type": "AI Tool",
+        "description": "AI screening tool used by 25+ companies to screen 5000+ candidates. 74% of predicted candidates performed better than ATS counterparts.",
+        "stack": [
+            "AI/ML",
+            "Screening"
+        ],
+        "link": "https://catalyst-iq-labs-hiring-asst.vercel.app/",
+        "linkText": "View Live"
+    },
+    {
+        "title": "OCR Pipeline",
+        "type": "ML Pipeline",
+        "description": "Optimized OCR pipeline achieving 74% accuracy boost over Tesseract with only 11% cost overhead.",
+        "stack": [
+            "Python",
+            "OCR"
+        ],
+        "link": "https://github.com/shivansh193/news_ocr",
+        "linkText": "View GitHub"
+    },
+    {
+        "title": "Petner",
+        "type": "B2B SaaS",
+        "description": "Offline-first B2B SaaS platform. Secured 25+ partnerships and onboarded 100+ users. Built with real-time sync using Firebase.",
+        "stack": [
+            "React",
+            "Firebase"
+        ],
+        "link": null,
+        "linkText": null
+    },
+    {
+        "title": "Reddit MasterMind",
+        "type": "Automation",
+        "description": "Automated Reddit interaction and analysis tool.",
+        "stack": [
+            "Python",
+            "Automation"
+        ],
+        "link": "https://github.com/shivansh193/Reddit-Mastermind",
+        "linkText": "View GitHub"
+    },
+    {
+        "title": "DeCom",
+        "type": "Open Source",
+        "description": "Decentralized commerce project exploring blockchain applications in e-commerce.",
+        "stack": [
+            "Blockchain",
+            "Web3"
+        ],
+        "link": "https://github.com/shivansh193/ds-project",
+        "linkText": "View GitHub"
+    }
+]

@@ -1,0 +1,91 @@
+[
+    {
+        "company": "Thinkly Labs",
+        "role": "Full Stack Engineer",
+        "period": "Nov 2024 – Present",
+        "current": true,
+        "responsibilities": [
+            "Building North, a content generation engine from the ground up, architecting product infrastructure.",
+            "Designing and implementing core content engine responsible for intelligent content generation.",
+            "Collaborating directly with founding team on product architecture decisions.",
+            "Owning end-to-end feature development from database schema design to frontend integration."
+        ],
+        "achievement": "Reduced content production costs by 60% while maintaining human-level quality scores.",
+        "stack": [
+            "Python",
+            "FastAPI",
+            "LangChain",
+            "PostgreSQL"
+        ]
+    },
+    {
+        "company": "FilFlo",
+        "role": "Backend Developer",
+        "period": "Sept 2024 – Nov 2024",
+        "current": false,
+        "responsibilities": [
+            "Architected microservices-based backend using Node.js and NestJS, migrating 50% of monolithic codebase.",
+            "Optimized database queries and implemented Redis caching layer.",
+            "Implemented Docker containerization for development and staging environments."
+        ],
+        "achievement": "Reduced server response times from 800ms to sub-300ms for 10,000+ daily requests.",
+        "stack": [
+            "NestJS",
+            "Redis",
+            "Docker",
+            "Microservices"
+        ]
+    },
+    {
+        "company": "Frontrunner",
+        "role": "Software Development Intern",
+        "period": "May 2024 – Aug 2024",
+        "current": false,
+        "responsibilities": [
+            "Rapidly prototyped and launched 2 full-stack MVP applications using React, Node.js, and MongoDB within 8-week sprints.",
+            "Implemented automated CI/CD pipelines using GitHub Actions.",
+            "Owned complete features from database design through API development to frontend implementation."
+        ],
+        "achievement": "Contributed to 40% increase in monthly revenue through rapid feature development.",
+        "stack": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "CI/CD"
+        ]
+    },
+    {
+        "company": "CatalystIQ",
+        "role": "Founder & Technical Lead",
+        "period": "Jan 2024 – April 2024",
+        "current": false,
+        "responsibilities": [
+            "Architected enterprise-grade AI platform from scratch using React, Node.js, Python, and PostgreSQL.",
+            "Engineered ML-based recruitment system reducing hiring cycle time by 65%.",
+            "Led technical decision-making through data-driven analysis."
+        ],
+        "achievement": "Generated 1 Lakh+ revenue by delivering customized technical solutions to 10+ B2B clients.",
+        "stack": [
+            "Full Stack",
+            "ML/AI",
+            "System Design"
+        ]
+    },
+    {
+        "company": "Testline",
+        "role": "Product Development Intern",
+        "period": "Dec 2023 – Feb 2024",
+        "current": false,
+        "responsibilities": [
+            "Developed 3 production-ready features serving 3,000+ active users.",
+            "Engineered user authentication and authorization system with JWT tokens.",
+            "Wrote comprehensive unit and integration tests achieving 85% code coverage."
+        ],
+        "achievement": null,
+        "stack": [
+            "Authentication",
+            "Testing",
+            "API Integration"
+        ]
+    }
+]

@@ -1,0 +1,153 @@
+[
+    {
+        "slug": "invariant",
+        "title": "InVariant — Architecture Intelligence",
+        "shortDescription": "Stop guessing. Know exactly how your architecture will perform.",
+        "role": "Founder & Developer",
+        "timeline": "In Development",
+        "visitUrl": "https://invariant-six.vercel.app/",
+        "techStack": [
+            "Rust",
+            "TypeScript",
+            "AST Parsers",
+            "Next.js",
+            "Tailwind CSS"
+        ],
+        "problem": "Infrastructure in production-grade systems is often bloated and expensive. Teams ship code fast but waste resources due to poor architectural decisions made early on.",
+        "solution": "A deterministic analysis engine that shifts observability left. It detects anti-patterns and forecasts costs at the design and build phases, preventing expensive mistakes.",
+        "capabilities": [
+            "Stack Recommender (Design Phase)",
+            "Static Analysis & Cost Forecasting (Build Phase)",
+            "Drift Detection (Production Phase)"
+        ],
+        "outcomes": [
+            "Achieved 90%+ accuracy in vulnerability detection",
+            "Shipping weekly iterations based on developer feedback",
+            "Designed actionable reporting workflow"
+        ],
+        "deepDive": {
+            "inspiration": "Working across multiple startups and projects exposed me to a recurring pattern: infrastructure in production-grade systems was often bloated, inefficient, and expensive. The rise of generative AI and rapid, phased development cycles accelerated this problem—teams were shipping code faster but wasting compute resources due to poor architectural decisions made early on. I realized that most infrastructure issues could be caught before deployment if we had deterministic analysis at the design and build phases. Invariant was born from the need to shift observability left and prevent costly mistakes before they reach production.",
+            "goals": "To provide deterministic analysis and cost forecasting for software infrastructure before code hits production. The goal is to eliminate 'hidden costs' like N+1 queries and prevent architectural drift.",
+            "implementation": "Invariant's core challenge was building a static analysis engine capable of understanding complex codebases deterministically. The system uses TypeScript/Rust-based AST parsers to trace data flow, detect anti-patterns like N+1 queries and missing indexes, and map infrastructure dependencies—all without executing the code. To make this actionable, I integrated the analysis into developer workflows via CLI, CI/CD pipelines (with PR commenting), and a web dashboard. The architecture graph visualization uses SVG rendering with interactive nodes representing services, databases, and APIs, dynamically generated from code analysis. The cost forecasting engine cross-references detected patterns with cloud pricing APIs to project monthly spend, enabling teams to optimize before deployment.",
+            "achievements": [
+                "Achieved 90%+ accuracy in vulnerability detection",
+                "Shipping weekly iterations based on developer feedback",
+                "Designed actionable reporting workflow that integrates directly into PRs"
+            ]
+        }
+    },
+    {
+        "slug": "buildflow",
+        "title": "BuildFlow — SaaS Management Platform",
+        "shortDescription": "Project tracking workflows were complex and disjointed, making it hard for teams to maintain visibility.",
+        "role": "Full Stack Engineer",
+        "timeline": "2023",
+        "visitUrl": "https://product-roadmap-beta.vercel.app/",
+        "techStack": [
+            "React",
+            "TypeScript",
+            "CI/CD",
+            "Node.js",
+            "Gemini LLM"
+        ],
+        "problem": "LLMs often lose context of products during ideation and execution, requiring constant re-explanation of architecture and roadmap.",
+        "solution": "A platform with a context persistence layer that maintains a structured knowledge graph of the product, enabling the AI to act as a true co-builder.",
+        "capabilities": [
+            "Context persistence layer for AI",
+            "Feature ideation engine",
+            "Multi-user sessions with real-time sync"
+        ],
+        "outcomes": [
+            "Serving 200+ enterprise users across 500+ projects",
+            "Maintained 99.9% uptime SLA",
+            "Shipped production-ready in 6 weeks"
+        ],
+        "deepDive": {
+            "inspiration": "I was frustrated by how quickly LLMs lost context of my product during ideation and execution. Every time I'd return to a project after a break, I'd have to re-explain the architecture, features, and roadmap. BuildFlow was built to solve this exact problem—maintaining persistent product context across sessions, enabling the AI to act as a true co-builder rather than a forgetful assistant.",
+            "goals": "To build a production-ready SaaS platform that simplifies project tracking with robust multi-tenant security and automated deployment workflows, while keeping AI context intact.",
+            "implementation": "BuildFlow uses Gemini as the core LLM, but with a critical enhancement: a context persistence layer that maintains a structured knowledge graph of the product (features, tech stack, architecture decisions, dependencies). This allows the AI to provide contextually relevant suggestions without re-prompting. The system includes a feature ideation engine that proposes new capabilities with technical implementation details already mapped out. A Kanban board visualization tracks project progress and generates actionable steps, making it ideal for collaborative teams. The architecture supports multi-user sessions with real-time sync, allowing teams to build together while the AI maintains shared context across all participants.",
+            "achievements": [
+                "Serving 200+ enterprise users across 500+ projects",
+                "Maintained 99.9% uptime SLA",
+                "Shipped production-ready in 6 weeks",
+                "Reduced time-to-first-value from 30 mins to under 5 mins"
+            ]
+        }
+    },
+    {
+        "slug": "snuxplore",
+        "title": "SNUXplore — AI Campus Platform",
+        "shortDescription": "Campus navigation and information retrieval were fragmented, leading to poor student experience.",
+        "role": "Full Stack Engineer",
+        "timeline": "2023",
+        "visitUrl": "https://snu-xplore-six.vercel.app/",
+        "techStack": [
+            "React Native",
+            "Firebase",
+            "Azure AI",
+            "Redis",
+            "MongoDB"
+        ],
+        "problem": "Navigating campus was confusing, finding food menus was impossible, and accessing essential info required asking around.",
+        "solution": "A mobile-first, offline-ready solution with real-time updates, custom map overlays, and university SSO integration.",
+        "capabilities": [
+            "Offline-first mobile architecture",
+            "Custom indoor navigation maps",
+            "Aggressive caching for high concurrency"
+        ],
+        "outcomes": [
+            "30,000+ uses in the first week",
+            "15,000+ unique users over two years",
+            "Achieved sub-100ms query response times"
+        ],
+        "deepDive": {
+            "inspiration": "SNUXplore was born out of frustrations we faced as juniors at college—navigating campus was confusing, finding food outlet menus was impossible, and accessing essential campus information required asking around. We realized these weren't just our problems; they were universal pain points for students. SNUXplore was our attempt to solve these everyday frictions with a mobile-first solution. The response validated the need: 30,000+ uses in the first week and 15,000+ unique users over two years proved we'd hit a real pain point.",
+            "goals": "To create a unified platform for campus navigation and queries that is fast, accurate, and capable of handling peak traffic during university events.",
+            "implementation": "The challenge was building a mobile app that worked offline-first (since campus connectivity was unreliable) while keeping data fresh. We implemented a hybrid architecture with React Native for cross-platform support, backed by Firebase for real-time menu updates and navigation data. The mapping system used custom overlays on campus blueprints, allowing indoor navigation without GPS. User authentication integrated with the university's SSO system, ensuring security while providing seamless access. The app's performance optimization focused on aggressive caching and lazy loading to handle high concurrent usage during peak hours (lunch, class changes).",
+            "achievements": [
+                "Scaled to 30,000+ concurrent users",
+                "Achieved sub-100ms query response times via Redis caching",
+                "92% answer relevance in retrieval pipeline",
+                "Simplified complex campus navigation into an intuitive search interface"
+            ]
+        }
+    },
+    {
+        "slug": "north",
+        "title": "North — Creator Economy Platform",
+        "shortDescription": "Empowering creators to own and monetize their audience relationships.",
+        "role": "Full Stack Engineer",
+        "timeline": "Nov 2024 – Present",
+        "visitUrl": null,
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "LangChain",
+            "PostgreSQL",
+            "React"
+        ],
+        "problem": "Creators needed tools to build sustainable businesses beyond the limitations of traditional social platforms.",
+        "solution": "A robust platform for creator analytics, payment processing, and audience management, designed for high traffic and low latency.",
+        "capabilities": [
+            "Scalable APIs for creator analytics",
+            "Payment processing integration",
+            "Audience management system"
+        ],
+        "outcomes": [
+            "Reduced content production costs by 60%",
+            "Maintained human-level quality scores",
+            "Shipped production-ready code in fast-paced startup"
+        ],
+        "deepDive": {
+            "inspiration": "The inspiration for North came from recognizing the growing importance of personal branding in the creator economy. I reached out to the team at Thinkly to join as part of the core building team, where I saw an opportunity to contribute to a platform that empowers creators to own and monetize their audience relationships. North aims to provide creators with tools to build sustainable businesses beyond the limitations of traditional social platforms.",
+            "goals": "To build a content engine that could generate high-quality, factually accurate SEO articles at scale, reducing production costs while maintaining a human-level 'brand voice'.",
+            "implementation": "As part of the building team, I orchestrated the backend architecture and led the integration of complex third-party services. This involved designing scalable APIs to handle creator analytics, payment processing, and audience management. I focused on building a robust infrastructure that could support high-traffic creator workflows while maintaining low latency. The system architecture emphasized modularity, enabling rapid feature iteration while ensuring stability across integrations with email platforms, payment gateways, and content management systems.",
+            "achievements": [
+                "Reduced content production costs by 60%",
+                "Maintained human-level quality scores across thousands of articles",
+                "Shipped production-ready code in a fast-paced startup environment",
+                "Processed 50k+ tokens daily with zero downtime during launch"
+            ]
+        }
+    }
+]

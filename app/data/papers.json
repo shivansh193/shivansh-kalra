@@ -1,0 +1,46 @@
+[
+  {
+    "id": "prediction-markets",
+    "arxivId": "FINVERSE\n2026/047",
+    "title": "Prediction Markets as Macro Derivatives: A Simulation Framework for Portfolio Hedging with Event Contracts",
+    "venue": "FINVERSE 2026",
+    "venueDetail": "March 2026 · under review",
+    "abstract": "First empirical framework for evaluating institutional viability of event contract hedging. Models 383 Kalshi contracts across 58 macro events (Fed rate + CPI, 2022–2024) as binary derivatives using modified Black-Scholes on VIX surface. At 1% NAV: hedged Sharpe 0.538 vs unhedged 0.065. Quantifies basis risk (100% CPI accuracy, 0% FOMC — a market efficiency finding), hedge efficiency decay, and AUM ceiling ($148K current → $14.8M at 100× ADV). JEL: G11, G13, G14, G18.",
+    "tags": ["FINANCE · MACRO", "DERIVATIVES"],
+    "author": "Kalra, S.",
+    "metrics": ["383 contracts · 58 events", "Sharpe 0.538 vs 0.065"]
+  },
+  {
+    "id": "pie",
+    "arxivId": "PREPRINT\nPIE-2024",
+    "title": "PIE: Physics-Inspired Contrastive Learning for Low-Light Image Enhancement",
+    "venue": "PREPRINT · 2024",
+    "venueDetail": "IEEE-formatted · first author",
+    "abstract": "Bag-of-Curves negative sample generation (gamma, sigmoid, logarithmic curves), contrastive learning with Gram matrix triplet loss + InfoNCE objective, unsupervised superpixel segmentation for regional brightness consistency. Evaluated on LOL dataset and real-world smartphone images. Outperforms RetinexNet (20.7 PSNR), Zero-DCE (21.5), EnlightenGAN (20.9). PIE achieves 24.3 PSNR, 0.89 SSIM.",
+    "tags": ["VISION · LOW-LIGHT", "CONTRASTIVE LEARNING"],
+    "author": "Kalra, S.",
+    "metrics": ["24.3 PSNR · 0.89 SSIM", "+3.4 dB over best baseline"]
+  },
+  {
+    "id": "bitcoin-vol",
+    "arxivId": "IEEE\nBTC-2024",
+    "title": "Bitcoin Volatility and Regime Forecasting: A Comparative Analysis of Time Series Models",
+    "venue": "IEEE-FORMAT · 2024",
+    "venueDetail": "Working paper · sole author",
+    "abstract": "Comparative analysis of OLS, ARIMA, GARCH(1,1) on Bitcoin returns. Confirms Weak-Form EMH — 50% directional accuracy for OLS/ARIMA. GARCH(1,1): α=0.089, β=0.895, persistence=0.984. Crisis simulation across COVID-19 crash, Terra/Luna collapse, FTX bankruptcy, 2021 bull run. Bull/Bear regime classification showing asymmetric duration and 2–3× volatility differential.",
+    "tags": ["FINANCE · CRYPTO", "TIME SERIES"],
+    "author": "Kalra, S.",
+    "metrics": ["GARCH persistence=0.984", "4 crisis regimes simulated"]
+  },
+  {
+    "id": "pacer-mvcc",
+    "arxivId": "SYS\nPACER-2025",
+    "title": "PACER: Pressure-Adaptive Continuous Epoch Reclamation for MVCC Databases",
+    "venue": "ACADEMIC PAPER · 2025",
+    "venueDetail": "Working paper · sole author",
+    "abstract": "Novel MVCC garbage collection algorithm. Key innovations: continuous pressure adaptation (not discrete tiers), snapshot coalescing to minimize write amplification under high-concurrency workloads, and lock-free design throughout. Accompanied by C++ simulation of 100–200 concurrent processes with varying resource and security profiles. IEEE-formatted academic report.",
+    "tags": ["SYSTEMS · DB", "CONCURRENCY"],
+    "author": "Kalra, S.",
+    "metrics": ["lock-free throughout", "continuous pressure adaptation"]
+  }
+]

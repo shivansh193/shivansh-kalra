@@ -1,0 +1,83 @@
+[
+  {
+    "id": "pactle",
+    "name": "Pactle",
+    "role": "Founding Engineer",
+    "description": "Building a generalized product platform from scratch. Joined as founding engineer, day one.",
+    "timestamp": "2026-02-01",
+    "displayDate": "[2026-02-01]",
+    "status": "active",
+    "phases": null
+  },
+  {
+    "id": "catalystiq",
+    "name": "CatalystIQ",
+    "role": "Founder & Technical Lead",
+    "description": "Multi-phase AI and software company serving 200+ businesses across all products.",
+    "timestamp": "2023-02-18",
+    "displayDate": "[2023-02-18]",
+    "status": "alive",
+    "phases": [
+      {
+        "name": "Phase 1 — Services",
+        "year": "2023",
+        "description": "Services-based business building web apps and product designs for clients. First revenue, first client relationships."
+      },
+      {
+        "name": "Phase 2 — AI Freelance Marketplace",
+        "year": "2024",
+        "description": "Freelance hiring platform with AI-native job postings. Pioneered 'AI-only opportunities' — lower budget, shorter timespans, where AI does the work. Applicants submitted partial work as their application rather than a traditional proposal — a novel mechanic built in early 2024 before this became mainstream."
+      },
+      {
+        "name": "Phase 3 — Inventory + Quick Commerce Logistics",
+        "year": "2024",
+        "description": "Inventory management software deployed to 30–40 companies managing quick commerce logistics. Included a logistics optimization engine targeting carbon credit minimization — discontinued due to market fit challenges in India."
+      },
+      {
+        "name": "Phase 4 — DeLogi (Supply Chain QR Tracking)",
+        "year": "2024",
+        "description": "QR code-based product provenance system for imported goods. Each product carried a QR code scanned at every supply chain touchpoint to ensure quality and authenticity. Discontinued — market wasn't ready in India."
+      },
+      {
+        "name": "Phase 5 — CatalystIQ Hub (AI Recruitment)",
+        "year": "2024",
+        "description": "ML-based hiring platform serving 10+ B2B clients at 99%+ uptime. Reduced client hiring cycle time by 65%. 18% conversion rate. React, TypeScript, Python (Flask), PostgreSQL."
+      },
+      {
+        "name": "Phase 6 — Lead Generation Automations",
+        "year": "2025",
+        "description": "Built custom n8n automation workflows for client lead generation pipelines."
+      }
+    ]
+  },
+  {
+    "id": "snuxplore",
+    "name": "SNUXplore",
+    "role": "Founder",
+    "description": "Course planner and campus intelligence platform adopted across Shiv Nadar University. 30K+ concurrent users.",
+    "timestamp": "2023-08-04",
+    "displayDate": "[2023-08-04]",
+    "status": "alive",
+    "phases": null
+  },
+  {
+    "id": "petner",
+    "name": "Petner",
+    "role": "Founder",
+    "description": "Pet-focused social platform. First startup, started at age 16. Multiple iterations over two years.",
+    "timestamp": "2021-01-01",
+    "displayDate": "[2021-01-01]",
+    "status": "archived",
+    "phases": null
+  },
+  {
+    "id": "vidyaverse",
+    "name": "Vidya Verse",
+    "role": "Founding Engineer",
+    "description": "Ed-tech platform built from scratch. Led company's first Blockchain course as instructor. Authored the accompanying book.",
+    "timestamp": "2021-09-02",
+    "displayDate": "[2021-09-02]",
+    "status": "archived",
+    "phases": null
+  }
+]

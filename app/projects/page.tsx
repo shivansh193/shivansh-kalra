@@ -1,103 +1,107 @@
-import { SectionShell } from "@/components/ui/SectionShell";
-import Link from "next/link";
-import showcase from "@/app/data/showcase.json";
-import projects from "@/app/data/projects.json";
+import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import projects from '@/app/data/projects.json'
+
+function badgeClass(badge: string) {
+  if (badge === 'live') return 'badge live'
+  if (badge === 'research') return 'badge research'
+  return 'badge disc'
+}
 
 export default function ProjectsPage() {
-    return (
-        <div className="flex flex-col gap-24 pb-32 pt-12">
-            <div className="px-6 max-w-5xl mx-auto w-full">
-                <h1 className="text-3xl font-medium text-[var(--foreground)] mb-4">Projects</h1>
-                <p className="text-[var(--muted-foreground)] max-w-2xl">
-                    A collection of systems, products, and tools I&apos;ve built.
-                    Focusing on scalability, reliability, and user experience.
-                </p>
+  const deepDiveProjects = projects.filter(p => p.deepdive)
+  const otherProjects = projects.filter(p => !p.deepdive)
+
+  return (
+    <>
+      <Nav />
+      <div style={{ paddingTop: 56 }}>
+        <section style={{ borderTop: 0 }}>
+          <div className="wrap">
+            <div className="section-head" style={{ borderTop: 0 }}>
+              <div className="idx"><b>ALL</b> / <span>projects</span></div>
+              <h2>builds.complete <span>// everything shipped, researched, or explored</span></h2>
             </div>
+          </div>
+        </section>
 
-            {/* Project Showcase */}
-            <SectionShell id="showcase" title="Project Showcase">
-                <div className="space-y-24">
-                    {showcase.map((project, index) => (
-                        <div key={index} className="group">
-                            <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
-                                <div>
-                                    <h3 className="text-2xl font-medium text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-sm text-[var(--muted-foreground)] mt-1">{project.role} • {project.timeline}</p>
-                                </div>
-                                <Link href={`/projects/${project.slug}`} className="text-sm font-medium text-[var(--accent)] hover:underline underline-offset-4">
-                                    View Deep Dive →
-                                </Link>
-                            </div>
+        {/* deep dives */}
+        <section>
+          <div className="wrap">
+            <div className="section-head">
+              <div className="idx"><b>01</b> / <span>deep dives</span></div>
+              <h2>projects.featured <span>// click for full case study</span></h2>
+            </div>
+            <div className="proj-grid" style={{ marginBottom: 0 }}>
+              {deepDiveProjects.map((p) => (
+                <Link key={p.id} href={`/projects/${p.slug}`} className="card">
+                  <div className="top">
+                    <div className="name">{p.name}</div>
+                    <span className={badgeClass(p.badge)}>{p.badge}</span>
+                  </div>
+                  <div className="desc">{p.description}</div>
+                  <div className="stack">
+                    {p.stack.slice(0, 4).map(s => <span key={s}>{s}</span>)}
+                  </div>
+                  <div className="meta">
+                    <span className="m">// {p.year}</span>
+                    <span>{p.meta}</span>
+                  </div>
+                  <div className="arr">→</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                            <div className="p-8 rounded-2xl border border-[var(--border)] bg-[var(--muted)]/30">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                                    <div className="space-y-6">
-                                        <div>
-                                            <h4 className="text-sm font-medium text-[var(--foreground)] mb-2">The Problem</h4>
-                                            <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                                                {project.problem}
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-sm font-medium text-[var(--foreground)] mb-2">Technical Approach</h4>
-                                            <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                                                {project.solution}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-6">
-                                        <div>
-                                            <h4 className="text-sm font-medium text-[var(--foreground)] mb-2">Key Outcomes</h4>
-                                            <ul className="space-y-2 text-sm text-[var(--muted-foreground)]">
-                                                {project.outcomes.map((outcome, i) => (
-                                                    <li key={i} className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-[var(--accent)]"></span>{outcome}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="flex gap-2 flex-wrap">
-                                            {project.techStack.map((tech, i) => (
-                                                <span key={i} className="px-2 py-1 bg-[var(--background)] border border-[var(--border)] rounded text-xs text-[var(--muted-foreground)]">{tech}</span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </SectionShell>
-
-            {/* Other Projects */}
-            <SectionShell id="other" title="Other Projects">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {projects.map((project, index) => (
-                        <div key={index} className="p-6 rounded-xl border border-[var(--border)] bg-[var(--background)] hover:border-[var(--foreground)] transition-colors group">
-                            <div className="flex justify-between items-start mb-4">
-                                <h3 className="font-medium text-[var(--foreground)]">{project.title}</h3>
-                                <span className="text-xs text-[var(--muted-foreground)] border border-[var(--border)] px-2 py-0.5 rounded-full">{project.type}</span>
-                            </div>
-                            <p className="text-sm text-[var(--muted-foreground)] mb-6 line-clamp-3">
-                                {project.description}
-                            </p>
-                            <div className="flex items-center justify-between mt-auto">
-                                <div className="flex gap-2 text-xs text-[var(--muted-foreground)]">
-                                    {project.stack.map((tech, i) => (
-                                        <span key={i}>{tech}</span>
-                                    ))}
-                                </div>
-                                {project.link && (
-                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-[var(--foreground)] opacity-0 group-hover:opacity-100 transition-opacity">
-                                        {project.linkText} →
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </SectionShell>
-        </div>
-    );
+        {/* other projects */}
+        <section>
+          <div className="wrap">
+            <div className="section-head">
+              <div className="idx"><b>02</b> / <span>other builds</span></div>
+              <h2>projects.archive <span>// experiments, hackathons, early work</span></h2>
+            </div>
+            <div className="proj-grid" style={{ marginBottom: 56 }}>
+              {otherProjects.map((p) => (
+                p.link ? (
+                  <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer" className="card">
+                    <div className="top">
+                      <div className="name">{p.name}</div>
+                      <span className={badgeClass(p.badge)}>{p.badge}</span>
+                    </div>
+                    <div className="desc">{p.description}</div>
+                    <div className="stack">
+                      {p.stack.slice(0, 4).map(s => <span key={s}>{s}</span>)}
+                    </div>
+                    <div className="meta">
+                      <span className="m">// {p.year}</span>
+                      <span>{p.meta}</span>
+                    </div>
+                    <div className="arr">↗</div>
+                  </a>
+                ) : (
+                  <div key={p.id} className="card">
+                    <div className="top">
+                      <div className="name">{p.name}</div>
+                      <span className={badgeClass(p.badge)}>{p.badge}</span>
+                    </div>
+                    <div className="desc">{p.description}</div>
+                    <div className="stack">
+                      {p.stack.slice(0, 4).map(s => <span key={s}>{s}</span>)}
+                    </div>
+                    <div className="meta">
+                      <span className="m">// {p.year}</span>
+                      <span>{p.meta}</span>
+                    </div>
+                  </div>
+                )
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
+  )
 }

@@ -4,8 +4,8 @@
     "name": "InVariant",
     "role": "Founding Engineer",
     "description": "Security and infrastructure intelligence platform. Four components: static analysis engine, autonomous LLM reasoning agent, Next.js web app, and Rust CLI.",
-    "timestamp": "2025-01-01",
-    "displayDate": "[2025-xx-xx]",
+    "timestamp": "2026-02-01",
+    "displayDate": "[2026-02-01]",
     "status": "active",
     "phases": null
   },
@@ -14,13 +14,13 @@
     "name": "CatalystIQ",
     "role": "Founder & Technical Lead",
     "description": "Multi-phase AI and software company serving 200+ businesses across all products.",
-    "timestamp": "2023-02-18",
-    "displayDate": "[2023-02-18]",
+    "timestamp": "2024-01-01",
+    "displayDate": "[2024-01-01]",
     "status": "archived",
     "phases": [
       {
         "name": "Phase 1 — Services",
-        "year": "2023",
+        "year": "2024",
         "description": "Services-based business building web apps and product designs for clients. First revenue, first client relationships."
       },
       {
@@ -45,38 +45,18 @@
       },
       {
         "name": "Phase 6 — Lead Generation Automations",
-        "year": "2025",
+        "year": "2024",
         "description": "Built custom n8n automation workflows for client lead generation pipelines."
       }
     ]
   },
   {
-    "id": "snuxplore",
-    "name": "SNUXplore",
-    "role": "Founder",
-    "description": "Course planner and campus intelligence platform adopted across Shiv Nadar University. 30K+ concurrent users.",
-    "timestamp": "2023-08-04",
-    "displayDate": "[2023-08-04]",
-    "status": "alive",
-    "phases": null
-  },
-  {
     "id": "petner",
     "name": "Petner",
     "role": "Founder",
-    "description": "Pet-focused social platform. First startup, started at age 16. Multiple iterations over two years.",
-    "timestamp": "2021-01-01",
-    "displayDate": "[2021-01-01]",
-    "status": "archived",
-    "phases": null
-  },
-  {
-    "id": "vidyaverse",
-    "name": "Vidya Verse",
-    "role": "Founding Engineer",
-    "description": "Ed-tech platform built from scratch. Led company's first Blockchain course as instructor. Authored the accompanying book.",
-    "timestamp": "2021-09-02",
-    "displayDate": "[2021-09-02]",
+    "description": "Pet-focused social platform. First startup. Multiple iterations over ~11 months.",
+    "timestamp": "2022-09-01",
+    "displayDate": "[2022-09-01]",
     "status": "archived",
     "phases": null
   }

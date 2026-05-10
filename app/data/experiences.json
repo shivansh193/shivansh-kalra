@@ -88,17 +88,17 @@
     "id": "vidyaverse",
     "company": "Vidya Verse",
     "role": "Founding Engineer & Course Instructor",
-    "period": "2021 – 2022",
-    "shortPeriod": "2021 — 2022",
-    "duration": "1.3y",
+    "period": "Apr 2021 – Sept 2021",
+    "shortPeriod": "APR — SEPT '21",
+    "duration": "0.5y",
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "<b>Built entire platform from scratch</b> as founding engineer — first professional engineering role at age 16–17.",
+      "<b>Built entire platform from scratch</b> as founding engineer — first professional engineering role at age 16.",
       "Led and recorded the company's first course on <b>Blockchain technology</b> as instructor. Authored the accompanying book.",
       "Lessons learned: founder economics, distribution, and how to write code under pressure."
     ],
     "stack": ["React", "Node.js", "MongoDB", "Firebase"],
-    "gantt": { "left": 0, "width": 24.2, "ghost": true }
+    "gantt": { "left": 4.5, "width": 9.1, "ghost": true }
   }
 ]

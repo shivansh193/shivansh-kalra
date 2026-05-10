@@ -14,7 +14,6 @@ export default function Hero() {
       'Published Researcher',
       'Active since 2021',
       '20yo. CS @ SNU.',
-      'Founding Engineer · Pactle',
     ]
     let r = 0, i = 0, deleting = false
     let timer: ReturnType<typeof setTimeout>
@@ -44,7 +43,7 @@ export default function Hero() {
             <span><b>LAT</b> 28.524°N</span>
             <span><b>LON</b> 77.575°E</span>
             <span><b>TZ</b> IST · UTC+5:30</span>
-            <span><b>STATUS</b> <span style={{ color: 'var(--green)' }}>SHIPPING</span></span>
+            <span><b>STATUS</b> <span style={{ color: 'var(--green)' }}>BUILDING</span></span>
           </div>
 
           <h1 className="name">
@@ -84,8 +83,8 @@ export default function Hero() {
 
         <div className="hero-foot">
           <div className="col"><b>BUILDING SINCE</b>2021 · 5y compounded</div>
-          <div className="col"><b>CURRENT</b>Pactle · Founding Engineer</div>
-          <div className="col"><b>PRIOR</b>Thinkly · FilFlo · Testline</div>
+          <div className="col"><b>CURRENT</b>InVariant · Founding Engineer</div>
+          <div className="col"><b>PRIOR</b>Pactle · Thinkly · FilFlo</div>
         </div>
       </div>
 
@@ -109,9 +108,9 @@ export default function Hero() {
               <span className="delta">▲ across all ventures</span>
             </div>
             <div className="stat">
-              <span className="label">STARTUPS / VENTURES</span>
-              <span className="value">5</span>
-              <span className="delta flat">2 active · 3 archived</span>
+              <span className="label">STARTUPS FOUNDED</span>
+              <span className="value">3</span>
+              <span className="delta flat">CatalystIQ · Petner · SNUXplore</span>
             </div>
             <div className="stat">
               <span className="label">PEAK CONCURRENT USERS</span>
@@ -145,7 +144,7 @@ export default function Hero() {
               </defs>
               <path d="M0 50 L20 46 L40 48 L60 38 L80 40 L100 30 L120 32 L140 22 L160 26 L180 16 L200 18 L220 8 L240 12 L240 60 L0 60 Z" fill="url(#lg)" />
               <path d="M0 50 L20 46 L40 48 L60 38 L80 40 L100 30 L120 32 L140 22 L160 26 L180 16 L200 18 L220 8 L240 12" fill="none" stroke="#00E5FF" strokeWidth="1.2" />
-              <g stroke="#222" strokeWidth="1">
+              <g stroke="var(--line)" strokeWidth="1">
                 <line x1="0" y1="15" x2="240" y2="15" />
                 <line x1="0" y1="30" x2="240" y2="30" />
                 <line x1="0" y1="45" x2="240" y2="45" />
@@ -166,7 +165,7 @@ export default function Hero() {
           <div className="head"><span>SYS · NOW</span><span className="live">RUNNING</span></div>
           <div style={{ padding: '14px', display: 'flex', flexDirection: 'column', gap: 7, color: 'var(--text-dim)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>▸ building pactle, day one</span>
+              <span>▸ building invariant v3</span>
               <span style={{ color: 'var(--accent)' }}>live</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -174,7 +173,7 @@ export default function Hero() {
               <span style={{ color: 'var(--amber)' }}>finverse&apos;26</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>▸ invariant v3 shipping weekly</span>
+              <span>▸ quantedge — daily use</span>
               <span style={{ color: 'var(--green)' }}>active</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>

@@ -1,5 +1,5 @@
-/* ───── design tokens ───── */
-:root {
+/* ───── design tokens — dark (default) ───── */
+:root, [data-theme="dark"] {
   --bg: #0D0D0D;
   --bg-1: #111;
   --bg-2: #161616;
@@ -15,7 +15,35 @@
   --red: #ff5c5c;
   --mono: var(--font-mono), 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color-scheme: dark;
 }
+
+/* ───── design tokens — light ───── */
+[data-theme="light"] {
+  --bg: #F7F7F4;
+  --bg-1: #F0F0ED;
+  --bg-2: #E8E8E5;
+  --line: #DCDCDA;
+  --line-2: #CACAC7;
+  --text: #0F0F0F;
+  --text-dim: #444444;
+  --text-mute: #999999;
+  --accent: #007A99;
+  --accent-dim: #007A9933;
+  --green: #1B8A5A;
+  --amber: #B06820;
+  --red: #CC3333;
+  color-scheme: light;
+}
+
+[data-theme="light"] .panel { background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg) 100%); }
+[data-theme="light"] .term { background: var(--bg-1); }
+[data-theme="light"] .g-detail { background: var(--bg-2); }
+[data-theme="light"] .card:hover { background: var(--bg-1); }
+[data-theme="light"] .g-row:hover, [data-theme="light"] .g-row.active { background: var(--bg-1); }
+[data-theme="light"] .scan::after { display: none; }
+[data-theme="light"] .paper:hover { background: var(--bg-1); }
+[data-theme="light"] .component-card { background: var(--bg-1); }
 
 /* ───── reset ───── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,6 +83,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav ul a:hover { color: var(--accent); }
 .nav ul a.active { color: var(--text); }
 .nav .meta { font-family: var(--mono); font-size: 11px; color: var(--text-mute); }
+.theme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border: 1px solid var(--line-2);
+  color: var(--text-mute); transition: color .15s, border-color .15s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 
 @media (max-width: 760px) {
   .nav { padding: 0 16px; height: 52px; }

@@ -3,18 +3,18 @@
     "id": "pactle",
     "company": "Pactle",
     "role": "Founding Software Engineer",
-    "period": "Feb 2026 – Present",
-    "shortPeriod": "FEB '26 →",
-    "duration": "0.4y",
+    "period": "Feb 2026 – May 2026",
+    "shortPeriod": "FEB '26 — MAY '26",
+    "duration": "0.25y",
     "location": "Remote",
-    "type": "current",
+    "type": "past",
     "bullets": [
-      "<b>Founding engineer</b> — building the generalized product from the ground up; owns core technical foundations and scalable system architecture.",
+      "<b>Founding engineer</b> — built the generalized product from the ground up; owned core technical foundations and scalable system architecture.",
       "Built the internal <b>quote generation engine</b> — deterministic RFQ-to-quote converter with fuzzy search, multi-algorithm scoring, OCR for image-based RFQs, role-based approvals, and multi-currency support.",
-      "Bias for shipping — weekly releases since day one. Owns deployment, observability, and on-call."
+      "Bias for shipping — weekly releases since day one. Owned deployment, observability, and on-call."
     ],
     "stack": ["Node.js", "Next.js", "Postgres", "Redis", "Docker"],
-    "gantt": { "left": 92.4, "width": 7.6, "ghost": false }
+    "gantt": { "left": 92.4, "width": 4.5, "ghost": false }
   },
   {
     "id": "thinkly",

@@ -1,11 +1,11 @@
 [
   {
-    "id": "pactle",
-    "name": "Pactle",
+    "id": "invariant",
+    "name": "InVariant",
     "role": "Founding Engineer",
-    "description": "Building a generalized product platform from scratch. Joined as founding engineer, day one.",
-    "timestamp": "2026-02-01",
-    "displayDate": "[2026-02-01]",
+    "description": "Security and infrastructure intelligence platform. Four components: static analysis engine, autonomous LLM reasoning agent, Next.js web app, and Rust CLI.",
+    "timestamp": "2025-01-01",
+    "displayDate": "[2025-xx-xx]",
     "status": "active",
     "phases": null
   },
@@ -16,7 +16,7 @@
     "description": "Multi-phase AI and software company serving 200+ businesses across all products.",
     "timestamp": "2023-02-18",
     "displayDate": "[2023-02-18]",
-    "status": "alive",
+    "status": "archived",
     "phases": [
       {
         "name": "Phase 1 — Services",

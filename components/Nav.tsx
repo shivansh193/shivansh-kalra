@@ -5,12 +5,12 @@ import Link from 'next/link'
 
 export default function Nav() {
   const progressRef = useRef<HTMLDivElement>(null)
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(false)
 
   // init theme from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('theme')
-    const isDark = saved ? saved === 'dark' : true
+    const isDark = saved ? saved === 'dark' : false
     setDark(isDark)
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
   }, [])

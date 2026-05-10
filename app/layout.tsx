@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { JetBrains_Mono, Inter } from 'next/font/google'
 import './globals.css'
 
@@ -17,14 +17,14 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Shivansh Kalra — Founding Engineer / Systems Architect',
+  title: 'Shivansh Kalra â€” Founding Engineer / Systems Architect',
   description: '20-year-old CS student at Shiv Nadar University. Founding engineer at multiple early-stage startups, builder of production systems serving tens of thousands of concurrent users, published researcher. Building since 16.',
   keywords: ['Shivansh Kalra', 'Software Engineer', 'Full Stack', 'Systems Architect', 'SNU', 'Founding Engineer'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" className={`${jetbrainsMono.variable} ${inter.variable}`}>
+    <html lang="en" data-theme="light" className={`${jetbrainsMono.variable} ${inter.variable}`}>
       <body>
         {children}
       </body>

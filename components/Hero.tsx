@@ -72,10 +72,10 @@ export default function Hero() {
             }}>
               View work <span className="k">↵</span>
             </a>
-            <a href="mailto:sk262@snu.edu.in" className="btn">
-              sk262@snu.edu.in <span className="k">⌘</span>
+            <a href="mailto:shivanshkalra796@gmail.com" className="btn">
+              shivanshkalra796@gmail.com <span className="k">⌘</span>
             </a>
-            <a href="/Resume_Dec25.pdf" target="_blank" rel="noopener noreferrer" className="btn">
+            <a href="/Shivansh_Kalra_SWEResume_May25.pdf" target="_blank" rel="noopener noreferrer" className="btn">
               cv.pdf <span className="k">↗</span>
             </a>
           </div>

@@ -5,7 +5,7 @@ export default function Footer() {
         Open to founding-team roles, research, and conversations worth having.
       </p>
       <div className="foot-links">
-        <a href="mailto:sk262@snu.edu.in">sk262@snu.edu.in</a>
+        <a href="mailto:shivanshkalra796@gmail.com">shivanshkalra796@gmail.com</a>
         <span className="sep">·</span>
         <a href="https://github.com/shivansh193" target="_blank" rel="noopener noreferrer">github.com/shivansh193</a>
         <span className="sep">·</span>

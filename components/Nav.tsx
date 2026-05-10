@@ -83,6 +83,18 @@ export default function Nav() {
       </ul>
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
         <div className="meta">SNU · DEL · IST <span style={{ color: 'var(--green)', marginLeft: 8 }}>●</span></div>
+        <a
+          href="https://github.com/shivansh193"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="theme-toggle"
+          title="GitHub"
+          aria-label="GitHub profile"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.46-1.12-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.36 1.08 2.94.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .26.18.58.69.48A10 10 0 0012 2z" />
+          </svg>
+        </a>
         <button
           onClick={toggleTheme}
           className="theme-toggle"

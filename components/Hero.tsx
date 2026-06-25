@@ -83,7 +83,7 @@ export default function Hero() {
 
         <div className="hero-foot">
           <div className="col"><b>BUILDING SINCE</b>2021 · 5y compounded</div>
-          <div className="col"><b>CURRENT</b>InVariant · Founding Engineer</div>
+          <div className="col"><b>CURRENT</b>HealOS · Attack Capital (YC)</div>
           <div className="col"><b>PRIOR</b>Pactle · Thinkly · FilFlo</div>
         </div>
       </div>

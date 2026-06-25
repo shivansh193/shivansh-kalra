@@ -1,11 +1,28 @@
 [
   {
+    "id": "healos",
+    "company": "HealOS · Attack Capital (YC)",
+    "role": "Software Engineer",
+    "period": "Apr 2026 – Present",
+    "shortPeriod": "APR '26 — NOW",
+    "duration": "current",
+    "location": "Remote",
+    "type": "current",
+    "bullets": [
+      "Building features and integrations for <b>HealOS</b>, a healthcare operations platform by Attack Capital (YC-backed venture studio) — serving clinics with end-to-end medical workflow tooling.",
+      "Optimized backend workloads and <b>tokenized calling minutes</b> for the platform's voice agent, reducing cost overhead.",
+      "Built <b>outbound call automation</b> for claims and settlements processing across healthcare clinic operations."
+    ],
+    "stack": ["Node.js", "Next.js", "Postgres", "Twilio"],
+    "gantt": { "left": 97.0, "width": 3.0, "ghost": false }
+  },
+  {
     "id": "pactle",
     "company": "Pactle",
     "role": "Founding Software Engineer",
-    "period": "Feb 2026 – May 2026",
-    "shortPeriod": "FEB '26 — MAY '26",
-    "duration": "0.25y",
+    "period": "Feb 2026 – Apr 2026",
+    "shortPeriod": "FEB '26 — APR '26",
+    "duration": "0.16y",
     "location": "Remote",
     "type": "past",
     "bullets": [

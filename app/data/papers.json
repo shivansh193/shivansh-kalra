@@ -4,11 +4,11 @@
     "arxivId": "FINVERSE\n2026/047",
     "title": "Prediction Markets as Macro Derivatives: A Simulation Framework for Portfolio Hedging with Event Contracts",
     "venue": "FINVERSE 2026",
-    "venueDetail": "March 2026 · under review",
+    "venueDetail": "March 2026 · 2nd place",
     "abstract": "First empirical framework for evaluating institutional viability of event contract hedging. Models 383 Kalshi contracts across 58 macro events (Fed rate + CPI, 2022–2024) as binary derivatives using modified Black-Scholes on VIX surface. At 1% NAV: hedged Sharpe 0.538 vs unhedged 0.065. Quantifies basis risk (100% CPI accuracy, 0% FOMC — a market efficiency finding), hedge efficiency decay, and AUM ceiling ($148K current → $14.8M at 100× ADV). JEL: G11, G13, G14, G18.",
     "tags": ["FINANCE · MACRO", "DERIVATIVES"],
     "author": "Kalra, S.",
-    "metrics": ["383 contracts · 58 events", "Sharpe 0.538 vs 0.065"]
+    "metrics": ["2nd place · Finverse 2026", "383 contracts · 58 events", "Sharpe 0.538 vs 0.065"]
   },
   {
     "id": "pie",
@@ -35,12 +35,12 @@
   {
     "id": "pacer-mvcc",
     "arxivId": "SYS\nPACER-2026",
-    "title": "PACER: Pressure-Adaptive Continuous Epoch Reclamation for MVCC Databases",
-    "venue": "ACADEMIC PAPER · 2026",
-    "venueDetail": "Working paper · sole author",
-    "abstract": "Novel MVCC garbage collection algorithm. Key innovations: continuous pressure adaptation (not discrete tiers), snapshot coalescing to minimize write amplification under high-concurrency workloads, and lock-free design throughout. Accompanied by C++ simulation of 100–200 concurrent processes with varying resource and security profiles. IEEE-formatted academic report.",
-    "tags": ["SYSTEMS · DB", "CONCURRENCY"],
+    "title": "PACER: Pressure-Adaptive Continuous Epoch Reclamation",
+    "venue": "WORKING PAPER · 2026",
+    "venueDetail": "Not peer-reviewed · sole author",
+    "abstract": "Tests whether epoch-based reclamation for lock-free data structures can adapt its freeing policy to workload pressure, extending token4 (Kim et al., PPoPP 2024). Implemented in C++ (setbench) and Rust (loom model-checked). The initial 10–22% speedup traced to a use-after-free in the reclaimer; after the fix, PACER ties token4 (0.93–1.03×) on write-only, 80%-read and range-query workloads. A free-count sweep shows why there's no headroom on single-socket hardware. Multi-socket behaviour remains untested.",
+    "tags": ["SYSTEMS · CONCURRENCY", "MEMORY RECLAMATION"],
     "author": "Kalra, S.",
-    "metrics": ["lock-free throughout", "continuous pressure adaptation"]
+    "metrics": ["0.93–1.03× vs token4 (tie)", "3 concurrency bugs found + fixed"]
   }
 ]

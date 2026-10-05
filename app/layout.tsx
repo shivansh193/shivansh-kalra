@@ -18,7 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Shivansh Kalra â€” Founding Engineer / Systems Architect',
-  description: '20-year-old CS student at Shiv Nadar University. Founding engineer at multiple early-stage startups, builder of production systems serving tens of thousands of concurrent users, published researcher. Building since 16.',
+  description: '20-year-old CS student at Shiv Nadar University. Founding engineer at multiple early-stage startups, builder of production systems serving tens of thousands of concurrent users, author of research papers. Building since 16.',
   keywords: ['Shivansh Kalra', 'Software Engineer', 'Full Stack', 'Systems Architect', 'SNU', 'Founding Engineer'],
 }
 

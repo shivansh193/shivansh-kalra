@@ -45,7 +45,7 @@ export default function Experience({ experiences }: { experiences: ExperienceIte
               <div className="gantt-axis">
                 <div className="yrs">
                   {['2021', '2022', '2023', '2024', '2025', '2026'].map((yr, i) => (
-                    <span key={yr} className="yr" style={{ left: `${i * 20}%` }}>{yr}</span>
+                    <span key={yr} className="yr" style={{ left: `${(i * 100) / 6}%` }}>{yr}</span>
                   ))}
                 </div>
               </div>
@@ -64,7 +64,7 @@ export default function Experience({ experiences }: { experiences: ExperienceIte
                   </div>
                   <div className="g-track">
                     <div className="grid-lines">
-                      {[0, 20, 40, 60, 80, 100].map(p => (
+                      {[0, 1, 2, 3, 4, 5, 6].map(i => (i * 100) / 6).map(p => (
                         <i key={p} style={{ left: `${p}%` }} />
                       ))}
                     </div>

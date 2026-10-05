@@ -3,7 +3,7 @@
     "id": "invariant",
     "name": "InVariant",
     "role": "Founding Engineer",
-    "description": "Security and infrastructure intelligence platform. Four components: static analysis engine, autonomous LLM reasoning agent, Next.js web app, and Rust CLI.",
+    "description": "Infrastructure intelligence platform. Live-traffic stack fingerprinting, a call graph engine (9 node types, 10 edge types, 13 analyses), a Rust CLI, and an LLM agent that tries to disprove each finding first. Validated with 12 founders.",
     "timestamp": "2026-02-01",
     "displayDate": "[2026-02-01]",
     "status": "active",
@@ -13,9 +13,9 @@
     "id": "catalystiq",
     "name": "CatalystIQ",
     "role": "Founder & Technical Lead",
-    "description": "Multi-phase AI and software company serving 200+ businesses across all products.",
-    "timestamp": "2024-01-01",
-    "displayDate": "[2024-01-01]",
+    "description": "Multi-phase AI and software company, 2023–2025, serving 250+ businesses across all products.",
+    "timestamp": "2023-01-01",
+    "displayDate": "[2023-01-01]",
     "status": "archived",
     "phases": [
       {
@@ -41,7 +41,7 @@
       {
         "name": "Phase 5 — CatalystIQ Hub (AI Recruitment)",
         "year": "2024",
-        "description": "ML-based hiring platform serving 10+ B2B clients at 99%+ uptime. Reduced client hiring cycle time by 65%. 18% conversion rate. React, TypeScript, Python (Flask), PostgreSQL."
+        "description": "ML-based hiring platform that processed 4,000+ candidates for 10+ B2B clients at 99%+ uptime. Reduced client hiring cycle time by 65%. 18% conversion rate. React, TypeScript, Python (Flask), PostgreSQL."
       },
       {
         "name": "Phase 6 — Lead Generation Automations",

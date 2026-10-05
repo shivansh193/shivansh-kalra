@@ -1,20 +1,21 @@
 [
   {
-    "id": "healos",
-    "company": "HealOS · Attack Capital (YC)",
-    "role": "Software Engineer",
-    "period": "Apr 2026 – Present",
-    "shortPeriod": "APR '26 — NOW",
-    "duration": "current",
+    "id": "attack-capital",
+    "company": "Attack Capital (YC) · HealOS",
+    "role": "Software Development Engineer",
+    "period": "May 2026 – Aug 2026",
+    "shortPeriod": "MAY — AUG '26",
+    "duration": "0.3y",
     "location": "Remote",
-    "type": "current",
+    "type": "past",
     "bullets": [
-      "Building features and integrations for <b>HealOS</b>, a healthcare operations platform by Attack Capital (YC-backed venture studio) — serving clinics with end-to-end medical workflow tooling.",
-      "Optimized backend workloads and <b>tokenized calling minutes</b> for the platform's voice agent, reducing cost overhead.",
-      "Built <b>outbound call automation</b> for claims and settlements processing across healthcare clinic operations."
+      "Built an <b>EHR automation system</b> on network-layer replay (Browserbase + Playwright), intercepting internal API calls instead of scraping the UI. Integrated 3 EHRs in <b>2 days</b> vs. the usual 2–3 weeks, and cut turnaround from weeks to <b>under 30 minutes</b>. Adopted company-wide.",
+      "Implemented <b>TOTP from RFC 4226/6238</b> (HMAC-SHA1) from scratch so automated workflows could get past authenticator prompts. Also adopted company-wide.",
+      "Led the technical expansion of <b>HealOS</b> (50+ US companies) into the <b>UAE</b>: built the integration layer for regional compliance and partner onboarding.",
+      "Found and flagged <b>3 critical security vulnerabilities</b> in an EHR platform used by 40%+ of US healthcare professionals."
     ],
-    "stack": ["Node.js", "Next.js", "Postgres", "Twilio"],
-    "gantt": { "left": 97.0, "width": 3.0, "ghost": false }
+    "stack": ["Playwright", "Browserbase", "Node.js", "Next.js", "Postgres", "ElevenLabs"],
+    "gantt": { "left": 88.9, "width": 5.1, "ghost": false }
   },
   {
     "id": "pactle",
@@ -22,16 +23,16 @@
     "role": "Founding Software Engineer",
     "period": "Feb 2026 – Apr 2026",
     "shortPeriod": "FEB '26 — APR '26",
-    "duration": "0.16y",
+    "duration": "0.25y",
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "<b>Founding engineer</b> — built the generalized product from the ground up; owned core technical foundations and scalable system architecture.",
-      "Built the internal <b>quote generation engine</b> — deterministic RFQ-to-quote converter with fuzzy search, multi-algorithm scoring, OCR for image-based RFQs, role-based approvals, and multi-currency support.",
-      "Bias for shipping — weekly releases since day one. Owned deployment, observability, and on-call."
+      "One of the first engineers. Owned the architecture decisions and set engineering standards from day one.",
+      "Designed and built the platform's <b>backend infrastructure from scratch</b>, pre-launch.",
+      "Built the internal <b>quote generation engine</b> zero-to-one: deterministic RFQ-to-quote conversion with fuzzy search, multi-algorithm scoring, OCR for image-based RFQs (Tesseract + local LLM), role-based approvals, multi-currency support, and a full web UI."
     ],
-    "stack": ["Node.js", "Next.js", "Postgres", "Redis", "Docker"],
-    "gantt": { "left": 92.4, "width": 4.5, "ghost": false }
+    "stack": ["Node.js", "Next.js", "Postgres", "Redis", "Docker", "Tesseract"],
+    "gantt": { "left": 84.7, "width": 4.2, "ghost": false }
   },
   {
     "id": "thinkly",
@@ -48,41 +49,7 @@
       "Rapidly iterated on features based on user feedback while maintaining code quality."
     ],
     "stack": ["Next.js", "Node.js", "Postgres", "Redis"],
-    "gantt": { "left": 87.9, "width": 4.5, "ghost": false }
-  },
-  {
-    "id": "filflo",
-    "company": "FilFlo",
-    "role": "Backend Engineer",
-    "period": "Sept 2025 – Nov 2025",
-    "shortPeriod": "SEPT — NOV '25",
-    "duration": "0.16y",
-    "location": "Remote",
-    "type": "past",
-    "bullets": [
-      "Architected <b>microservices-based backend</b> using Node.js and NestJS, migrating 50% of monolithic codebase, reducing deployment time by 40%.",
-      "Implemented <b>Redis caching layer</b> cutting response latency from 800ms to sub-300ms for 10,000+ daily requests.",
-      "Maintained 99.8% uptime. Introduced Docker containerization across environments."
-    ],
-    "stack": ["Node.js", "NestJS", "Redis", "Docker", "Postgres"],
-    "gantt": { "left": 84.8, "width": 3.0, "ghost": false }
-  },
-  {
-    "id": "testline",
-    "company": "Testline",
-    "role": "Product Development Intern",
-    "period": "Dec 2024 – Feb 2025",
-    "shortPeriod": "DEC '24 — FEB '25",
-    "duration": "0.25y",
-    "location": "Remote",
-    "type": "past",
-    "bullets": [
-      "Delivered <b>3 production features</b> serving 3,000+ active users.",
-      "Engineered authentication system reducing signup friction by <b>11%</b>.",
-      "Achieved <b>85% code coverage</b> with unit and integration tests, resolving 25+ critical bugs pre-deployment."
-    ],
-    "stack": ["React", "Node.js", "MongoDB", "Jest"],
-    "gantt": { "left": 71.2, "width": 4.5, "ghost": false }
+    "gantt": { "left": 80.6, "width": 4.2, "ghost": false }
   },
   {
     "id": "frontrunner",
@@ -99,7 +66,7 @@
       "Collaborated with 5+ engineers using Agile methodologies."
     ],
     "stack": ["React", "Node.js", "MongoDB", "GitHub Actions"],
-    "gantt": { "left": 63.6, "width": 4.5, "ghost": false }
+    "gantt": { "left": 55.6, "width": 5.6, "ghost": false }
   },
   {
     "id": "vidyaverse",
@@ -116,6 +83,6 @@
       "Lessons learned: founder economics, distribution, and how to write code under pressure."
     ],
     "stack": ["React", "Node.js", "MongoDB", "Firebase"],
-    "gantt": { "left": 4.5, "width": 9.1, "ghost": true }
+    "gantt": { "left": 4.2, "width": 8.3, "ghost": true }
   }
 ]

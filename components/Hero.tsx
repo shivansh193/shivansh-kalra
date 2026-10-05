@@ -11,7 +11,7 @@ export default function Hero() {
     const roles = [
       'Founding Engineer',
       'Systems Architect',
-      'Published Researcher',
+      'Researcher',
       'Active since 2021',
       '20yo. CS @ SNU.',
     ]
@@ -61,7 +61,7 @@ export default function Hero() {
           <p className="bio">
             20-year-old CS student at <em>Shiv Nadar University</em>. Founding engineer at multiple
             early-stage startups, builder of production systems serving tens of thousands of concurrent
-            users, and a published researcher in <em>quantitative finance</em>, <em>computer vision</em>,
+            users, and author of research papers in <em>quantitative finance</em>, <em>computer vision</em>,
             and <em>systems</em>. Building things since 16.
           </p>
 
@@ -83,15 +83,15 @@ export default function Hero() {
 
         <div className="hero-foot">
           <div className="col"><b>BUILDING SINCE</b>2021 · 5y compounded</div>
-          <div className="col"><b>CURRENT</b>HealOS · Attack Capital (YC)</div>
-          <div className="col"><b>PRIOR</b>Pactle · Thinkly · FilFlo</div>
+          <div className="col"><b>CURRENT</b>Invariant · SNU B.Tech &apos;27</div>
+          <div className="col"><b>PRIOR</b>Attack Capital (YC) · Pactle · Thinkly</div>
         </div>
       </div>
 
       <aside className="right">
         <div className="panel">
           <div className="head">
-            <span>SK · OPERATIONS / Q2 2026</span>
+            <span>SK · OPERATIONS / Q4 2026</span>
             <div className="dots"><i /><i /><i /></div>
             <span className="live">LIVE</span>
           </div>
@@ -104,7 +104,7 @@ export default function Hero() {
             </div>
             <div className="stat">
               <span className="label">BUSINESSES SERVED</span>
-              <span className="value">200<span className="unit">+</span></span>
+              <span className="value">250<span className="unit">+</span></span>
               <span className="delta">▲ across all ventures</span>
             </div>
             <div className="stat">
@@ -165,11 +165,11 @@ export default function Hero() {
           <div className="head"><span>SYS · NOW</span><span className="live">RUNNING</span></div>
           <div style={{ padding: '14px', display: 'flex', flexDirection: 'column', gap: 7, color: 'var(--text-dim)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>▸ building invariant v3</span>
+              <span>▸ building invariant v4</span>
               <span style={{ color: 'var(--accent)' }}>live</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>▸ submitted prediction-mkts paper</span>
+              <span>▸ prediction-mkts paper · 2nd place</span>
               <span style={{ color: 'var(--amber)' }}>finverse&apos;26</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>

@@ -117,7 +117,7 @@
     "slug": "quantedge",
     "name": "QuantEdge",
     "badge": "live",
-    "description": "Rust quant research platform, run daily. Multi-factor stock picker (momentum, fundamentals z-scored within GICS sector, SEC Form 4 insider activity, macro), a backtester with a real cost model, and a hash-chained, append-only forward-test log that records picks every trading morning before outcomes exist. Natural-language strategies parsed by Gemini. Covers Nifty 500 + S&P 500.",
+    "description": "Rust quant research platform, run daily. Multi-factor stock picker (momentum, fundamentals z-scored within GICS sector, SEC Form 4 insider activity, macro), a backtester with a real cost model, and a hash-chained, append-only forward-test log that records each day's picks before their holding-period outcomes are known. Natural-language strategies parsed by Gemini. Supports NSE and US markets.",
     "stack": [
       "Rust",
       "SQLite",
@@ -154,7 +154,7 @@
         {
           "name": "Forward-Test Log",
           "tech": "SHA-256 hash chain + GitHub Actions",
-          "description": "Every US trading morning a workflow logs the model's picks before the open. Each entry stores the hash of the one before it, so editing or deleting a past entry breaks the chain."
+          "description": "A GitHub Actions workflow logs the model's picks every trading day, before their holding-period outcomes are known. Each entry stores the hash of the one before it, so editing or deleting a past entry breaks the chain."
         },
         {
           "name": "Paper Portfolio",
@@ -163,8 +163,9 @@
         }
       ],
       "metrics": [
-        "Covers Nifty 500 + S&P 500",
+        "NSE and US markets (live universe: 318 US stocks)",
         "Hash-chained forward-test log, appended daily by CI",
+        "194 Rust tests, clippy in CI",
         "Point-in-time fundamentals and S&P 500 membership",
         "Backtests: Sharpe, max drawdown, VaR/CVaR, rank-IC"
       ]

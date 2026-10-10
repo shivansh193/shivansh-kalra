@@ -3,7 +3,7 @@
     "id": "invariant",
     "name": "InVariant",
     "role": "Founding Engineer",
-    "description": "Infrastructure intelligence platform. Live-traffic stack fingerprinting, a call graph engine (9 node types, 10 edge types, 13 analyses), a Rust CLI, and an LLM agent that tries to disprove each finding first. Validated with 12 founders.",
+    "description": "Infrastructure intelligence platform. Live-traffic stack fingerprinting, a call graph engine (9 node types, 10 edge types, 8 analyses), a Rust CLI, and the open-source clipy. 30 founder conversations, validated with 12 founders.",
     "timestamp": "2026-02-01",
     "displayDate": "[2026-02-01]",
     "status": "active",

@@ -4,7 +4,7 @@
     "slug": "invariant",
     "name": "InVariant",
     "badge": "live",
-    "description": "Infrastructure intelligence platform, being built as a startup. A Playwright agent intercepts live network traffic to fingerprint a company's stack and generates shareable security reports. Call graph engine with 9 node types, 10 edge types and 13 cross-component analyses (tree-sitter + Python AST), streamed over SSE. An LLM agent tries to disprove each finding before it's surfaced. Validated with 12 founders.",
+    "description": "Security and infrastructure analysis tool, built solo as a startup. Scans an app three ways: a Playwright scan of a public URL with a shareable report, a CDP session recorder for authenticated flows, and a codebase call graph (9 node types, 10 edge types, tree-sitter + Python AST) with 8 graph-level analyses. Results stream over SSE to a Next.js dashboard and post to GitHub PRs. 30 founder conversations, 15 demos, validated with 12 founders.",
     "stack": [
       "Python",
       "TypeScript",
@@ -13,48 +13,47 @@
       "Playwright",
       "tree-sitter",
       "FastAPI",
-      "Supabase",
-      "D3"
+      "React Flow"
     ],
     "year": "2025 →",
     "meta": "v4 · live",
     "link": "https://invar-v4.vercel.app",
     "github": null,
     "deepdive": {
-      "tagline": "Infrastructure intelligence: reads your code and your live stack together, and argues with its own findings before showing them.",
+      "tagline": "Reads your code and your live stack together: URL scans, authenticated session replay, and a call graph of your codebase.",
       "overview": "Invariant is an infrastructure intelligence platform I'm building as a startup. It combines a static call-graph engine, a live Playwright agent that watches real network traffic, a Rust CLI, and a web app, so code-level and runtime signals end up in one place.",
       "why": "Security auditing is largely manual — expensive, slow, and inconsistent. InVariant automates the reconnaissance and analysis phase while being smart enough to know what to look for based on what it discovers. The autonomous agent doesn't run a checklist; it reasons about what to investigate next.",
       "components": [
         {
-          "name": "Stack Fingerprinting Agent",
-          "tech": "Playwright + LLM APIs",
-          "description": "Intercepts live network traffic to fingerprint a company's full stack, then generates shareable outbound security reports."
+          "name": "Web Scanner",
+          "tech": "Playwright + Python",
+          "description": "Checks a public URL across 7 categories, including stack fingerprinting, and produces a shareable report."
         },
         {
           "name": "Call Graph Engine",
           "tech": "tree-sitter + Python AST",
-          "description": "9 node types, 10 edge types and 13 cross-component analyses, streamed to the client over SSE."
-        },
-        {
-          "name": "Adversarial Verification",
-          "tech": "LLM agent",
-          "description": "Before a finding is surfaced, an LLM agent tries to disprove it. Findings that don't survive get dropped."
+          "description": "9 node types, 10 edge types and 8 cross-component analyses (duplicate fetches, unbounded fan-out, circular deps, unauthenticated endpoints). Streams over SSE."
         },
         {
           "name": "Rust CLI",
           "tech": "Rust + Chrome DevTools Protocol",
-          "description": "Offline-capable session-replay scanning with device-flow auth, for environments that can't send data to a cloud service."
+          "description": "scan, push, a TUI report, device-flow auth, and record/analyze for capturing an authenticated browser session and analyzing it offline."
         },
         {
-          "name": "Graph Visualization",
-          "tech": "D3",
-          "description": "Force-directed graph with 300-tick pre-settlement and 3 zoom levels; switches to Canvas above 800 nodes."
+          "name": "Graph View",
+          "tech": "React Flow + dagre",
+          "description": "Four views: topology, modules, trace and blast radius."
+        },
+        {
+          "name": "clipy (open source)",
+          "tech": "Rust",
+          "description": "Records a session, traces values between API requests and writes a runnable replay script. 33 tests, CI on Linux, macOS and Windows."
         }
       ],
       "metrics": [
-        "9 node types · 10 edge types · 13 cross-component analyses",
-        "Validated with 12 founders",
-        "Canvas rendering above 800 nodes",
+        "9 node types · 10 edge types · 8 graph analyses",
+        "Self-scan: 157 files → 126 findings in 1.8 s",
+        "30 founder conversations · 15 demos",
         "Live: invar-v4.vercel.app"
       ]
     }

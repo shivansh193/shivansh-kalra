@@ -196,17 +196,18 @@
     "slug": "vaultscope",
     "name": "VaultScope",
     "badge": "research",
-    "description": "AI-powered IPsec VPN protocol analyzer for SIH 2026 (SIH26160, NTRO), built as a two-person team. My part: the capture dataset (6 traffic classes) and the traffic-type classifier that identifies what's running inside encrypted tunnels, taking macro-F1 from 0.79 to 0.98. The rules engine, backend and dashboard were built by my teammate.",
+    "description": "AI-powered IPsec VPN protocol analyzer for SIH 2026 (SIH26160, NTRO), built as a team. I built most of the analysis core: the IKEv1/v2 parser that reconstructs each session's crypto negotiation, the ingestion and ESP flow-feature stages, the protocol and traffic-type classifiers, and part of the CVE-linked rules engine. On the team's 300-capture dataset (6 traffic classes), the traffic classifier went from 0.79 to 0.98 macro-F1.",
     "stack": [
       "Python",
       "scikit-learn",
       "XGBoost",
       "tshark",
       "pyshark",
+      "FastAPI",
       "Docker"
     ],
     "year": "2026",
-    "meta": "SIH 2026 · team of 2",
+    "meta": "SIH 2026 · team",
     "link": "https://github.com/shivansh193/vaultscope",
     "github": "https://github.com/shivansh193/vaultscope",
     "deepdive": null

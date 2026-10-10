@@ -41,7 +41,7 @@
       {
         "name": "Phase 5 — CatalystIQ Hub (AI Recruitment)",
         "year": "2024",
-        "description": "ML-based hiring platform that processed 4,000+ candidates for 10+ B2B clients at 99%+ uptime. Reduced client hiring cycle time by 65%. 18% conversion rate. React, TypeScript, Python (Flask), PostgreSQL."
+        "description": "Hiring platform with an AI resume screener that 10+ B2B clients used directly to screen 4,000+ candidates, at 99%+ uptime. Reduced client hiring cycle time by 65%. 18% conversion rate. React, TypeScript, Python (Flask), PostgreSQL."
       },
       {
         "name": "Phase 6 — Lead Generation Automations",

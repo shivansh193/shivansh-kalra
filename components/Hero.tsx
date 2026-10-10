@@ -60,8 +60,8 @@ export default function Hero() {
 
           <p className="bio">
             20-year-old CS student at <em>Shiv Nadar University</em>. Founding engineer at multiple
-            early-stage startups, builder of production systems serving tens of thousands of concurrent
-            users, and author of research papers in <em>quantitative finance</em>, <em>computer vision</em>,
+            early-stage startups, builder of production systems used by tens of thousands of
+            people, and author of research papers in <em>quantitative finance</em>, <em>computer vision</em>,
             and <em>systems</em>. Building things since 16.
           </p>
 
@@ -113,9 +113,9 @@ export default function Hero() {
               <span className="delta flat">CatalystIQ · Petner · SNUXplore</span>
             </div>
             <div className="stat">
-              <span className="label">PEAK CONCURRENT USERS</span>
+              <span className="label">SNUXPLORE · WEEK 1</span>
               <span className="value">30K<span className="unit">+</span></span>
-              <span className="delta">prod · sustained</span>
+              <span className="delta">uses · campus launch</span>
             </div>
           </div>
 

@@ -9,7 +9,7 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "Built an <b>EHR automation system</b> on network-layer replay (Browserbase + Playwright), intercepting internal API calls instead of scraping the UI. Integrated 3 EHRs in <b>2 days</b> vs. the usual 2–3 weeks, and cut turnaround from weeks to <b>under 30 minutes</b>. Adopted company-wide.",
+      "Built an <b>EHR automation system</b> on network-layer replay (Browserbase + Playwright), intercepting internal API calls instead of scraping the UI. Cut integration turnaround from weeks to <b>under 30 minutes</b>. Adopted company-wide.",
       "Implemented <b>TOTP from RFC 4226/6238</b> (HMAC-SHA1) from scratch so automated workflows could get past authenticator prompts. Also adopted company-wide.",
       "Led the technical expansion of <b>HealOS</b> (50+ US companies) into the <b>UAE</b>: built the integration layer for regional compliance and partner onboarding.",
       "Found and flagged <b>3 critical security vulnerabilities</b> in an EHR platform used by 40%+ of US healthcare professionals."
@@ -40,7 +40,7 @@
     "bullets": [
       "Spent the first weeks on the legacy platform learning the domain, then moved to the <b>generalised product</b>.",
       "Built the generalised product's <b>frontend from its first commit</b>, and co-built the backend: lead management, SLA tracking and round-robin assignment.",
-      "Built the internal <b>quote generation engine</b> zero-to-one: deterministic RFQ-to-quote conversion with fuzzy search, multi-algorithm scoring, OCR for image-based RFQs (Tesseract + local LLM), role-based approvals, multi-currency support, and a full web UI."
+      "My pre-hire assignment, a deterministic <b>RFQ-to-quote engine</b> (fuzzy search, multi-algorithm scoring, Tesseract OCR for image-based RFQs, approvals, multi-currency), was <b>integrated into Pactle's product</b>."
     ],
     "stack": [
       "Node.js",

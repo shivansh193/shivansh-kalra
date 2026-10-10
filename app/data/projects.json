@@ -377,42 +377,37 @@
     "slug": "snuxplore",
     "name": "SNUXplore",
     "badge": "live",
-    "description": "Campus platform for Shiv Nadar University, built with a team of 5 and now on v4. Scaled to 30,000+ concurrent users via distributed architecture with load balancing, multi-layer caching, and optimized queries for sub-100ms response times. RAG-based LLM for natural-language queries across campus data.",
+    "description": "Campus platform for Shiv Nadar University. I led all the tech as one of 3 project leads for a ~23-person team, and I'm the largest code contributor. 30,000+ uses in its first week; RAG-based LLM answers natural-language questions across campus data. Now on v4.",
     "stack": [
       "Next.js",
-      "MongoDB",
-      "Azure AI Services",
-      "Microservices"
+      "Gemini",
+      "LangChain",
+      "RAG"
     ],
     "year": "2025",
-    "meta": "30K+ concurrent · team of 5",
+    "meta": "30K+ uses in week 1 · tech lead",
     "link": "https://snu-xplore-six.vercel.app",
     "github": null,
     "deepdive": {
-      "tagline": "Campus platform for 30,000+ concurrent users with sub-100ms response times and RAG-based natural language queries.",
-      "overview": "SNUXplore is a campus platform for Shiv Nadar University. What started as a course planner grew into a full campus intelligence system. The scale story is the interesting part — 30,000+ concurrent users during course registration periods when everyone hits the system in the same five-minute window.",
-      "why": "SNU's existing tools were fragmented and slow. Students couldn't easily find which courses were available, which professors taught what, or how to plan their degree. The 30K concurrent users in the first week proved the pain point was real.",
+      "tagline": "Campus platform for Shiv Nadar University: 30,000+ uses in its first week, with RAG-based natural-language answers.",
+      "overview": "SNUXplore is a campus platform for Shiv Nadar University. What started as a course planner grew into a campus information system. I led all the tech as one of 3 project leads for a ~23-person team (most of the team ran marketing and on-ground work), and I'm the largest code contributor. It's now on v4.",
+      "why": "SNU's existing tools were fragmented and slow. Students couldn't easily find which courses were available, which professors taught what, or where to eat. 30,000+ uses in the first week proved the pain point was real.",
       "components": [
         {
-          "name": "Distributed Architecture",
-          "tech": "Microservices + Load Balancing",
-          "description": "Distributed architecture with load balancing and multi-layer caching. Designed for sudden traffic spikes during course registration — everyone trying to enroll in the same five-minute window."
+          "name": "Spike-Ready Backend",
+          "tech": "Caching + optimized queries",
+          "description": "Built for course-registration spikes, when the whole campus hits the system in the same few minutes."
         },
         {
           "name": "RAG Query System",
-          "tech": "Azure AI Services",
+          "tech": "Gemini + LangChain",
           "description": "RAG-based LLM system for intelligent natural-language query resolution. Students can ask 'which professor's CS electives have the best peer ratings' and get accurate, sourced answers."
-        },
-        {
-          "name": "Performance Layer",
-          "tech": "MongoDB + Multi-layer Cache",
-          "description": "Optimized queries achieving sub-100ms response times at 30K+ concurrent users. CDN, application, and database caching tiers working in concert."
         }
       ],
       "metrics": [
-        "30,000+ concurrent users",
-        "Sub-100ms response times under peak load",
-        "Distributed architecture with multi-layer caching",
+        "30,000+ uses in the first week",
+        "Tech lead, one of 3 project leads, ~23-person team",
+        "Largest code contributor",
         "RAG-based natural language query system",
         "Live: snu-xplore-six.vercel.app"
       ]

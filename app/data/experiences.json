@@ -14,8 +14,19 @@
       "Led the technical expansion of <b>HealOS</b> (50+ US companies) into the <b>UAE</b>: built the integration layer for regional compliance and partner onboarding.",
       "Found and flagged <b>3 critical security vulnerabilities</b> in an EHR platform used by 40%+ of US healthcare professionals."
     ],
-    "stack": ["Playwright", "Browserbase", "Node.js", "Next.js", "Postgres", "ElevenLabs"],
-    "gantt": { "left": 88.9, "width": 5.1, "ghost": false }
+    "stack": [
+      "Playwright",
+      "Browserbase",
+      "Node.js",
+      "Next.js",
+      "Postgres",
+      "ElevenLabs"
+    ],
+    "gantt": {
+      "left": 88.9,
+      "width": 5.1,
+      "ghost": false
+    }
   },
   {
     "id": "pactle",
@@ -27,12 +38,23 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "One of the first engineers. Owned the architecture decisions and set engineering standards from day one.",
-      "Designed and built the platform's <b>backend infrastructure from scratch</b>, pre-launch.",
+      "Spent the first weeks on the legacy platform learning the domain, then moved to the <b>generalised product</b>.",
+      "Built the generalised product's <b>frontend from its first commit</b>, and co-built the backend: lead management, SLA tracking and round-robin assignment.",
       "Built the internal <b>quote generation engine</b> zero-to-one: deterministic RFQ-to-quote conversion with fuzzy search, multi-algorithm scoring, OCR for image-based RFQs (Tesseract + local LLM), role-based approvals, multi-currency support, and a full web UI."
     ],
-    "stack": ["Node.js", "Next.js", "Postgres", "Redis", "Docker", "Tesseract"],
-    "gantt": { "left": 84.7, "width": 4.2, "ghost": false }
+    "stack": [
+      "Node.js",
+      "Next.js",
+      "Postgres",
+      "Redis",
+      "Docker",
+      "Tesseract"
+    ],
+    "gantt": {
+      "left": 84.7,
+      "width": 4.2,
+      "ghost": false
+    }
   },
   {
     "id": "thinkly",
@@ -48,8 +70,17 @@
       "Collaborated with founding team on <b>distributed system architecture</b> decisions.",
       "Rapidly iterated on features based on user feedback while maintaining code quality."
     ],
-    "stack": ["Next.js", "Node.js", "Postgres", "Redis"],
-    "gantt": { "left": 80.6, "width": 4.2, "ghost": false }
+    "stack": [
+      "Next.js",
+      "Node.js",
+      "Postgres",
+      "Redis"
+    ],
+    "gantt": {
+      "left": 80.6,
+      "width": 4.2,
+      "ghost": false
+    }
   },
   {
     "id": "frontrunner",
@@ -65,8 +96,17 @@
       "Built <b>CI/CD pipelines</b> with GitHub Actions reducing manual deployment effort by 70%.",
       "Collaborated with 5+ engineers using Agile methodologies."
     ],
-    "stack": ["React", "Node.js", "MongoDB", "GitHub Actions"],
-    "gantt": { "left": 55.6, "width": 5.6, "ghost": false }
+    "stack": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "GitHub Actions"
+    ],
+    "gantt": {
+      "left": 55.6,
+      "width": 5.6,
+      "ghost": false
+    }
   },
   {
     "id": "vidyaverse",
@@ -82,7 +122,16 @@
       "Led and recorded the company's first course on <b>Blockchain technology</b> as instructor. Authored the accompanying book.",
       "Lessons learned: founder economics, distribution, and how to write code under pressure."
     ],
-    "stack": ["React", "Node.js", "MongoDB", "Firebase"],
-    "gantt": { "left": 4.2, "width": 8.3, "ghost": true }
+    "stack": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Firebase"
+    ],
+    "gantt": {
+      "left": 4.2,
+      "width": 8.3,
+      "ghost": true
+    }
   }
 ]

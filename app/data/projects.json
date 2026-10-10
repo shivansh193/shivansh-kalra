@@ -333,21 +333,20 @@
     "slug": "buildflow",
     "name": "BuildFlow",
     "badge": "live",
-    "description": "AI-assisted project management platform serving 200+ enterprise users with 500+ active projects. Guides teams from idea to shipped product: AI-assisted ideation with retained context, feature refinement for MVP scoping, personalized task generation, Kanban tracking, Sonar API research. Multi-tenant, 99.9% uptime.",
+    "description": "AI-assisted project management tool: ideation with context kept across sessions, MVP feature scoping, personalized task generation and Kanban tracking. Used at a college event, where it handled 500+ projects.",
     "stack": [
-      "React",
+      "Next.js",
       "TypeScript",
-      "PostgreSQL",
-      "REST APIs",
-      "CI/CD"
+      "Firebase",
+      "Gemini"
     ],
     "year": "2025",
-    "meta": "200+ users · 99.9% uptime",
+    "meta": "500+ projects · college event",
     "link": null,
     "github": null,
     "deepdive": {
-      "tagline": "AI-assisted project management — from ambiguous idea to shipped product, with 200+ enterprise users and 99.9% uptime.",
-      "overview": "BuildFlow is an end-to-end project management platform with AI assistance at each stage of the product lifecycle. Unlike generic PM tools, it's designed specifically to take projects from ambiguous initial idea all the way to shipped product.",
+      "tagline": "AI-assisted project management, from ambiguous idea to shipped product. Ran 500+ projects at a college event.",
+      "overview": "BuildFlow is a project management tool with AI help at each stage, from a rough idea to a shipped product. It was used at a college event, where it handled 500+ projects.",
       "why": "Most PM tools assume you know what to build. LLMs lose context of your product between sessions, requiring constant re-explanation. BuildFlow maintains persistent product context and helps you figure out what to build before helping you build it.",
       "components": [
         {
@@ -364,19 +363,12 @@
           "name": "Personalized Task Generation",
           "tech": "LLM APIs",
           "description": "Task generation calibrated to team experience level. A task list for a senior engineer looks different from one for a junior — different granularity, different assumptions."
-        },
-        {
-          "name": "Infrastructure",
-          "tech": "PostgreSQL + CI/CD",
-          "description": "Role-based access control, multi-tenant architecture, automated CI/CD with zero-downtime deployments. Public project showcase for sharing with recruiters and investors."
         }
       ],
       "metrics": [
-        "200+ enterprise users",
-        "500+ active projects",
-        "99.9% uptime with zero-downtime deployments",
-        "Multi-tenant architecture with RBAC",
-        "Public project showcase integrated"
+        "500+ projects at a college event",
+        "Context kept across sessions",
+        "Personalized task generation + Kanban"
       ]
     }
   },

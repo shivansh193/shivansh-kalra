@@ -13,40 +13,40 @@
     "id": "catalystiq",
     "name": "CatalystIQ",
     "role": "Founder & Technical Lead",
-    "description": "B2B SaaS built directly with companies, Dec 2023 – Apr 2024, serving 250+ businesses across all products.",
+    "description": "B2B SaaS I built directly with client companies, Dec 2023 to Apr 2024. Across everything we shipped, 250+ businesses used it.",
     "timestamp": "2023-12-01",
     "displayDate": "[2023-12-01]",
     "status": "archived",
     "phases": [
       {
-        "name": "Phase 1 — Services",
+        "name": "Phase 1: Services",
         "year": "2024",
-        "description": "Services-based business building web apps and product designs for clients. First revenue, first client relationships."
+        "description": "Web apps and product design for clients. First revenue, first client relationships."
       },
       {
-        "name": "Phase 2 — AI Freelance Marketplace",
+        "name": "Phase 2: AI freelance marketplace",
         "year": "2024",
-        "description": "Freelance hiring platform with AI-native job postings. Pioneered 'AI-only opportunities' — lower budget, shorter timespans, where AI does the work. Applicants submitted partial work as their application rather than a traditional proposal — a novel mechanic built in early 2024 before this became mainstream."
+        "description": "A freelance platform built around small, AI-assisted gigs. Applicants submitted a piece of the actual work instead of a proposal."
       },
       {
-        "name": "Phase 3 — Inventory + Quick Commerce Logistics",
+        "name": "Phase 3: Inventory for quick commerce",
         "year": "2024",
-        "description": "Inventory management software deployed to 30–40 companies managing quick commerce logistics. Included a logistics optimization engine targeting carbon credit minimization — discontinued due to market fit challenges in India."
+        "description": "Inventory software used by 30–40 quick-commerce companies, plus a logistics optimizer aimed at cutting carbon. We dropped the optimizer when it didn't find market fit in India."
       },
       {
-        "name": "Phase 4 — DeLogi (Supply Chain QR Tracking)",
+        "name": "Phase 4: DeLogi",
         "year": "2024",
-        "description": "QR code-based product provenance system for imported goods. Each product carried a QR code scanned at every supply chain touchpoint to ensure quality and authenticity. Discontinued — market wasn't ready in India."
+        "description": "QR-based provenance for imported goods: every scan along the supply chain adds to the product's audit trail. Shut down because the market wasn't ready."
       },
       {
-        "name": "Phase 5 — CatalystIQ Hub (AI Recruitment)",
+        "name": "Phase 5: CatalystIQ Hub",
         "year": "2024",
-        "description": "Hiring platform with an AI resume screener that 10+ B2B clients used directly to screen 4,000+ candidates, at 99%+ uptime. Reduced client hiring cycle time by 65%. 18% conversion rate. React, TypeScript, Python (Flask), PostgreSQL."
+        "description": "An AI resume screener that 10+ B2B clients ran themselves to screen 4,000+ candidates. 65% shorter hiring cycles for clients, 18% conversion rate."
       },
       {
-        "name": "Phase 6 — Lead Generation Automations",
+        "name": "Phase 6: Lead-gen automation",
         "year": "2024",
-        "description": "Built custom n8n automation workflows for client lead generation pipelines."
+        "description": "Custom n8n workflows for client lead-generation pipelines."
       }
     ]
   },
@@ -54,7 +54,7 @@
     "id": "petner",
     "name": "Petner",
     "role": "Founder",
-    "description": "Pet-focused social platform. First startup. Multiple iterations over ~11 months.",
+    "description": "Social platform for pet owners. My first startup, rebuilt four times over about a year.",
     "timestamp": "2022-09-01",
     "displayDate": "[2022-09-01]",
     "status": "archived",

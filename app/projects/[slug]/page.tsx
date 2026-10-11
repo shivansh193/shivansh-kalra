@@ -94,8 +94,8 @@ export default async function ProjectDeepDive({ params }: { params: Promise<{ sl
                   visit live <span className="k">↗</span>
                 </a>
               )}
-              {project.github && !project.link && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn" style={{ marginLeft: 'auto' }}>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn" style={{ marginLeft: project.link ? 0 : 'auto' }}>
                   github <span className="k">↗</span>
                 </a>
               )}

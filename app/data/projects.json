@@ -2,13 +2,13 @@
   {
     "id": "invariant",
     "slug": "invariant",
-    "name": "InVariant",
+    "name": "Invariant",
     "badge": "live",
-    "description": "Security and infrastructure analysis tool, built solo as a startup. Scans an app three ways: a Playwright scan of a public URL with a shareable report, a CDP session recorder for authenticated flows, and a codebase call graph (9 node types, 10 edge types, tree-sitter + Python AST) with 8 graph-level analyses. Results stream over SSE to a Next.js dashboard and post to GitHub PRs. 30 founder conversations, 15 demos, validated with 12 founders.",
+    "description": "My startup. Point it at an app and it scans three ways: a Playwright pass over the public URL, an offline analysis of a recorded login session, and a call graph of the codebase with 8 graph-level analyses. Findings stream into a dashboard and land on GitHub PRs as comments. 30 founder conversations so far, 12 founders validated it.",
     "stack": [
+      "Rust",
       "Python",
       "TypeScript",
-      "Rust",
       "Next.js",
       "Playwright",
       "tree-sitter",
@@ -20,39 +20,39 @@
     "link": "https://invar-v4.vercel.app",
     "github": null,
     "deepdive": {
-      "tagline": "Reads your code and your live stack together: URL scans, authenticated session replay, and a call graph of your codebase.",
-      "overview": "Invariant is an infrastructure intelligence platform I'm building as a startup. It combines a static call-graph engine, a live Playwright agent that watches real network traffic, a Rust CLI, and a web app, so code-level and runtime signals end up in one place.",
-      "why": "Security auditing is largely manual — expensive, slow, and inconsistent. InVariant automates the reconnaissance and analysis phase while being smart enough to know what to look for based on what it discovers. The autonomous agent doesn't run a checklist; it reasons about what to investigate next.",
+      "tagline": "Reads your code and your running app together, so a finding shows up with both halves of the story.",
+      "overview": "I'm building Invariant solo. It started as a static analyzer and grew into three scanners feeding one dashboard: a public-URL scan, an authenticated session recorder, and a codebase call graph. The CLI is Rust, the scan engine is Python, the dashboard is Next.js.",
+      "why": "Every team I worked with ran a pile of tools that didn't talk to each other, and none of them knew how the code related to the deployed app. I wanted one place where a slow endpoint, the query behind it and the line that wrote it show up together.",
       "components": [
         {
-          "name": "Web Scanner",
+          "name": "Web scanner",
           "tech": "Playwright + Python",
-          "description": "Checks a public URL across 7 categories, including stack fingerprinting, and produces a shareable report."
+          "description": "Checks a public URL across 7 categories, including stack fingerprinting from live traffic, and produces a report you can share."
         },
         {
-          "name": "Call Graph Engine",
+          "name": "Call graph engine",
           "tech": "tree-sitter + Python AST",
-          "description": "9 node types, 10 edge types and 8 cross-component analyses (duplicate fetches, unbounded fan-out, circular deps, unauthenticated endpoints). Streams over SSE."
+          "description": "9 node types and 10 edge types. On top of the graph it runs 8 analyses, like duplicate fetches, unbounded fan-out, circular dependencies and endpoints with no auth. Progress streams over SSE."
         },
         {
           "name": "Rust CLI",
           "tech": "Rust + Chrome DevTools Protocol",
-          "description": "scan, push, a TUI report, device-flow auth, and record/analyze for capturing an authenticated browser session and analyzing it offline."
+          "description": "scan, push, a terminal report, device-flow login, and record/analyze: capture an authenticated browser session and analyze it offline."
         },
         {
-          "name": "Graph View",
+          "name": "Graph view",
           "tech": "React Flow + dagre",
-          "description": "Four views: topology, modules, trace and blast radius."
+          "description": "Four views of the same graph: topology, modules, a request trace and blast radius. Replaced my first D3 version in August."
         },
         {
-          "name": "clipy (open source)",
-          "tech": "Rust",
-          "description": "Records a session, traces values between API requests and writes a runnable replay script. 33 tests, CI on Linux, macOS and Windows."
+          "name": "clipy",
+          "tech": "Rust, open source",
+          "description": "The session-replay part, pulled out as a standalone open-source tool."
         }
       ],
       "metrics": [
         "9 node types · 10 edge types · 8 graph analyses",
-        "Self-scan: 157 files → 126 findings in 1.8 s",
+        "Self-scan: 157 files, 126 findings in 1.8 s",
         "30 founder conversations · 15 demos",
         "Live: invar-v4.vercel.app"
       ]
@@ -63,7 +63,7 @@
     "slug": "hippovoice",
     "name": "HippoVoice",
     "badge": "research",
-    "description": "Long-term memory for voice AI companions: Ebbinghaus-style decay with per-emotion salience, a semantic/episodic split, and HippoRAG-style graph retrieval (vector + BM25 seeds, 1-hop graph walk). Benchmarked on LoCoMo (1,540 QA pairs) against local Mem0/A-MEM reimplementations on the same harness. Runs end-to-end behind Qwen2.5-Omni audio-to-audio.",
+    "description": "Long-term memory for voice companions. Memories fade unless they matter or get recalled, and retrieval walks an association graph instead of only matching vectors. On LoCoMo it ties a Mem0-style baseline on recall (29.47% vs 29.11%) and pulls in a third as much irrelevant context. Runs end to end behind Qwen2.5-Omni.",
     "stack": [
       "Python",
       "PyTorch",
@@ -74,40 +74,90 @@
       "NetworkX"
     ],
     "year": "2026",
-    "meta": "OSS · LoCoMo benchmarked",
-    "link": "https://github.com/shivansh193/hippovoice",
+    "meta": "OSS · benchmarked on LoCoMo",
+    "link": null,
     "github": "https://github.com/shivansh193/hippovoice",
     "deepdive": {
-      "tagline": "Memory that behaves less like a vector database and more like a person: things fade unless they matter or get recalled again.",
-      "overview": "HippoVoice is a memory system for voice AI companions built on two ideas from how human memory works: Ebbinghaus-style decay and HippoRAG-style associative retrieval. It started as a research demo for Rumik. Every baseline is a local reimplementation run through one harness, because published Mem0/Zep LoCoMo numbers use different LLMs and lenient LLM-as-judge scoring.",
-      "why": "Standard RAG retrieves by similarity and keeps everything forever. That's fine on a small benchmark and gets worse as a store grows for months. I wanted retrieval that stays clean as memory piles up, and a measurement setup honest enough to tell me whether it actually does.",
+      "tagline": "Memory that forgets the way people do. Breakfast three weeks ago fades; the thing you mentioned once and cared about sticks.",
+      "overview": "HippoVoice started as a demo I built for Rumik and turned into a proper research project. It combines Ebbinghaus-style decay, emotion-weighted salience and HippoRAG-style graph retrieval. I reimplemented Mem0, A-MEM and a Zep-style baseline on the same harness, because published LoCoMo numbers use different models and lenient LLM judges, and I wanted a comparison I could trust.",
+      "why": "Plain RAG keeps every turn forever and retrieves by similarity. That's fine on a small benchmark and gets noisier the longer a companion runs. I wanted memory that stays clean as it grows, and a test setup honest enough to tell me if it does.",
       "components": [
         {
-          "name": "Decay + Emotion Salience",
+          "name": "Decay and salience",
           "tech": "Python",
-          "description": "Ebbinghaus forgetting curves with per-emotion decay multipliers. Salience drops over turns unless something boosts it."
+          "description": "Ebbinghaus forgetting curves with a decay multiplier per emotion. Salience drops every turn unless something boosts it."
         },
         {
-          "name": "Graph Retrieval",
+          "name": "Graph retrieval",
           "tech": "NetworkX + ChromaDB",
-          "description": "HippoRAG-style: vector and BM25 keyword seeds, then a 1-hop graph walk, blending relevance with log-normalized salience."
+          "description": "Vector and BM25 seeds, then a one-hop walk over the association graph, scored by relevance blended with salience."
         },
         {
-          "name": "Fair Baselines",
-          "tech": "Local reimplementations",
-          "description": "Mem0-style, A-MEM-style and Zep-style baselines on identical infrastructure and LoCoMo's published token-F1 scorer."
+          "name": "Fair baselines",
+          "tech": "Same harness for everyone",
+          "description": "Mem0-style, A-MEM-style and Zep-style systems run on identical infrastructure with LoCoMo's published token-F1 scorer."
         },
         {
-          "name": "Voice Pipeline",
+          "name": "Voice pipeline",
           "tech": "Qwen2.5-Omni + Whisper",
-          "description": "The same memory runs behind an audio-to-audio model: a fact stated in one spoken turn is recalled correctly after an unrelated turn in between."
+          "description": "The same memory behind an audio-to-audio model. A fact said in one spoken turn is recalled correctly after an unrelated turn in between."
         }
       ],
       "metrics": [
-        "LoCoMo, 1,540 QA pairs: 29.47% avg F1 vs 29.11% Mem0-style at matched top_k=10 (a tie)",
-        "Synthetic contamination benchmark: 10% irrelevant context retrieved vs 30% for Mem0-style and flat RAG",
-        "Audio-to-audio (Qwen2.5-Omni): 25.81% avg F1 on a 40-question run, zero errors",
-        "Early 'lead' traced to a top_k mismatch and corrected; documented in BUGS.md"
+        "LoCoMo, 1,540 questions: 29.47% vs 29.11% for Mem0-style at matched settings. A tie, and I report it as one",
+        "Contamination test: 10% irrelevant context retrieved vs 30% for Mem0-style and plain RAG",
+        "Audio-to-audio: 25.81% avg F1 on a 40-question run with zero errors",
+        "My early lead over Mem0 was a top_k mismatch. Re-running the baseline caught it; it's written up in BUGS.md"
+      ]
+    }
+  },
+  {
+    "id": "clipy",
+    "slug": "clipy",
+    "name": "clipy",
+    "badge": "live",
+    "description": "Record yourself using a web app, and clipy works out which values flow between its API requests, which requests actually matter, and writes a Python script that replays the flow. One recording went from 25 requests to the 5 it needed. Built overnight, 33 tests, CI on Linux, macOS and Windows.",
+    "stack": [
+      "Rust",
+      "Chrome DevTools Protocol",
+      "tokio",
+      "ChaCha20-Poly1305"
+    ],
+    "year": "2026",
+    "meta": "OSS · Rust CLI",
+    "link": null,
+    "github": "https://github.com/shivansh193/clipy",
+    "deepdive": {
+      "tagline": "Turns a browser session into a replay script that pulls fresh tokens from live responses.",
+      "overview": "clipy drives Chrome over the raw DevTools Protocol, records every request, then works out the data dependencies between them. You get a runnable Python script, a Mermaid diagram of the flow and a short report. It's the open-source version of Invariant's session-replay scan.",
+      "why": "At Attack Capital I automated integrations by replaying internal API calls instead of scraping the UI, and it cut the work from weeks to minutes. I did the dependency tracing by hand every time. clipy is the tool I wanted back then.",
+      "components": [
+        {
+          "name": "Recorder",
+          "tech": "Rust + raw CDP",
+          "description": "Drives Chrome, Edge or Brave and follows new tabs, iframes and workers. It reads raw CDP events instead of a typed crate, so a new Chrome release can't break it."
+        },
+        {
+          "name": "Dependency analysis",
+          "tech": "Rust",
+          "description": "Links a value in one response to the request that later uses it. The evidence bar scales with how random the value looks, so short ids and common words don't create fake links, and a response only counts if it finished before the request started."
+        },
+        {
+          "name": "Code generation",
+          "tech": "Python + requests",
+          "description": "The replay reads tokens from live responses. CI checks out against a freshly restarted demo shop where every recorded token is already dead."
+        },
+        {
+          "name": "Secrets vault",
+          "tech": "ChaCha20-Poly1305 + OS keychain",
+          "description": "Recordings are safe to commit. Secrets are sealed with a key that never touches the file, and --forget destroys the key."
+        }
+      ],
+      "metrics": [
+        "25 recorded requests reduced to the 5 that mattered",
+        "33 tests, CI on Linux, macOS and Windows",
+        "About 5.9k lines of Rust, built in one night",
+        "Deterministic: no LLM anywhere in the pipeline"
       ]
     }
   },
@@ -116,74 +166,185 @@
     "slug": "quantedge",
     "name": "QuantEdge",
     "badge": "live",
-    "description": "Rust quant research platform, run daily. Multi-factor stock picker (momentum, fundamentals z-scored within GICS sector, SEC Form 4 insider activity, macro), a backtester with a real cost model, and a hash-chained, append-only forward-test log that records each day's picks before their holding-period outcomes are known. Natural-language strategies parsed by Gemini. Supports NSE and US markets.",
+    "description": "A quant research platform in Rust that I run every day. It picks stocks from momentum, fundamentals, insider filings and macro signals, backtests with a real cost model, and logs each day's picks to a hash-chained file before their outcomes are known, so I can't quietly tune results after the fact.",
     "stack": [
       "Rust",
       "SQLite",
       "SEC EDGAR",
-      "Yahoo Finance",
       "FRED",
       "Gemini",
       "GitHub Actions"
     ],
     "year": "2026",
     "meta": "OSS · runs daily",
-    "link": "https://github.com/shivansh193/quant-edge",
+    "link": null,
     "github": "https://github.com/shivansh193/quant-edge",
     "deepdive": {
-      "tagline": "A quant research stack built around one rule: the only honest evidence is a prediction logged before you know if it was right.",
-      "overview": "QuantEdge is a Rust quant research platform: a point-in-time data layer, a multi-factor stock picker, a backtester, and a tamper-evident forward-test log. Most of the design effort goes into making look-ahead bias structurally impossible and making the log impossible to quietly edit.",
-      "why": "Most retail quant tools are either too simple (no real signal construction) or require expensive Bloomberg terminals. I built what I actually wanted to use: a proper multi-signal scorer with natural language strategy configuration and full backtesting.",
+      "tagline": "Built around one rule: the only evidence that counts is a prediction written down before you know if it was right.",
+      "overview": "QuantEdge has a point-in-time data layer, a multi-factor stock picker, a backtester and a forward-test log nobody can edit without it showing. Most of the effort went into making look-ahead bias impossible by construction.",
+      "why": "Backtests always look good if you're allowed to fit them to the past. I wanted a setup where I couldn't fool myself, even if I tried.",
       "components": [
         {
-          "name": "Multi-Signal Engine",
+          "name": "Signals",
           "tech": "Rust + SQLite",
-          "description": "Momentum, fundamentals (P/E, EPS growth z-scored within GICS sector, keyed to actual SEC filing dates), insider activity (SEC Form 4) and macro (VIX, yield curve). GDELT and Reddit sentiment were tested live and switched off rather than shipped as fake signals."
+          "description": "Momentum, fundamentals z-scored within GICS sector (keyed to the actual SEC filing date), insider buying from Form 4, and macro. I tested GDELT and Reddit sentiment live and switched them off because they didn't hold up."
         },
         {
-          "name": "Natural Language Strategy Input",
-          "tech": "Gemini API",
-          "description": "Strategy weights specified in natural language — 'weight momentum 2x, ignore insider activity for tech stocks' — parsed by Gemini into signal weight vectors. No config files to edit."
+          "name": "Natural-language strategies",
+          "tech": "Gemini",
+          "description": "Write a strategy in plain English, like 'weight momentum 2x, ignore insiders for tech', and it becomes signal weights."
         },
         {
-          "name": "Backtesting Engine",
+          "name": "Backtester",
           "tech": "Rust",
-          "description": "Next-open fills, spread/slippage/square-root market impact cost model, rank-IC signal validation, drawdown circuit breaker, beta/VaR/CVaR reporting. An AsOf view can't return data dated after its as-of date, enforced in SQL and again in Rust."
+          "description": "Next-open fills, spread, slippage and square-root market impact, rank-IC checks, a drawdown circuit breaker, and VaR/CVaR reporting. The data layer can't return anything dated after the as-of date; SQL enforces it and Rust checks again."
         },
         {
-          "name": "Forward-Test Log",
-          "tech": "SHA-256 hash chain + GitHub Actions",
-          "description": "A GitHub Actions workflow logs the model's picks every trading day, before their holding-period outcomes are known. Each entry stores the hash of the one before it, so editing or deleting a past entry breaks the chain."
-        },
-        {
-          "name": "Paper Portfolio",
-          "tech": "SQLite",
-          "description": "Persistent paper portfolio with daily P&L tracking and rebalance alerts. All data cached locally in SQLite for offline operation and fast backtests."
+          "name": "Forward-test log",
+          "tech": "SHA-256 chain + GitHub Actions",
+          "description": "CI logs the model's picks every trading day. Each entry carries the hash of the previous one, so editing or deleting history breaks the chain."
         }
       ],
       "metrics": [
-        "NSE and US markets (live universe: 318 US stocks)",
-        "Hash-chained forward-test log, appended daily by CI",
         "194 Rust tests, clippy in CI",
+        "NSE and US markets (live universe: 318 US stocks)",
         "Point-in-time fundamentals and S&P 500 membership",
-        "Backtests: Sharpe, max drawdown, VaR/CVaR, rank-IC"
+        "Picks logged daily by CI into a hash chain"
       ]
     }
+  },
+  {
+    "id": "recourse",
+    "slug": "recourse",
+    "name": "Recourse",
+    "badge": "live",
+    "description": "Helps a California tenant file a small-claims petition to get a security deposit back. It interviews you in plain language, checks eligibility and fees against dated statute text, fills the official SC-100 form, and hands you a report showing where every claim came from. Built in about 39 hours for LexHack 2026.",
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "pdf-lib",
+      "Gemini"
+    ],
+    "year": "2026",
+    "meta": "LexHack 2026",
+    "link": "https://recourse-pearl.vercel.app",
+    "github": "https://github.com/shivansh193/recourse",
+    "deepdive": {
+      "tagline": "Legal paperwork where the model is never the one deciding the law.",
+      "overview": "Recourse walks a self-represented tenant from a messy description of what happened to a filled SC-100 and a grounding report. Thresholds and fees are computed in code against dated statute excerpts. The model only extracts facts, checks them and parses sources you paste in.",
+      "why": "Deposit disputes are simple on paper and miserable to file alone. A tool that hallucinates a filing fee is worse than no tool, so I kept the law in code and used the model only where it's actually good.",
+      "components": [
+        {
+          "name": "Intake and pre-screen",
+          "tech": "Gemini",
+          "description": "Plain-language intake. Evictions, lockouts and safety issues get routed to the court's self-help center or legal aid instead, with an override."
+        },
+        {
+          "name": "Rule checks",
+          "tech": "TypeScript",
+          "description": "Eligibility and filing-fee tiers computed against statute text with dates, not asked of the model."
+        },
+        {
+          "name": "Self-verification",
+          "tech": "Structured output + code",
+          "description": "The schema asks for evidence before the verdict, because structured output is generated in order and verdict-first let the model rationalize. A deterministic check overrides a 'supported' verdict when its own note contradicts it."
+        },
+        {
+          "name": "Form filling",
+          "tech": "pdf-lib",
+          "description": "Fills the official SC-100 and generates a separate grounding report. Names are matched back to the source text after the model swapped one accented character."
+        }
+      ],
+      "metrics": [
+        "20 tests: name matching, fee tiers, PDF text, contradiction checks",
+        "Built in about 39 hours",
+        "Live: recourse-pearl.vercel.app"
+      ]
+    }
+  },
+  {
+    "id": "forge",
+    "slug": "forge",
+    "name": "forge",
+    "badge": "live",
+    "description": "Version control for AI agent prompts. Every edit gets a commit with a word-level diff, rollback and forks. Before you commit, it writes a realistic test message and runs the old and new prompt on it, so you see how the behavior changes before you keep the edit. 78 tests, built in about 26 hours.",
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "Postgres",
+      "Prisma",
+      "Vitest"
+    ],
+    "year": "2026",
+    "meta": "hackathon · 26 hours",
+    "link": "https://forge-theta-two.vercel.app",
+    "github": "https://github.com/shivansh193/forge",
+    "deepdive": {
+      "tagline": "Git for agent prompts, where the diff that matters is the behavior.",
+      "overview": "forge gives each agent's system prompt a real history: commits, word-level diffs, one-click rollback and forks. The interesting part is the behavioral diff, which runs the same message through two versions and compares the outputs.",
+      "why": "Prompt changes break agents silently. A text diff tells you what you changed; it doesn't tell you what the agent will now do. I wanted that answer before committing.",
+      "components": [
+        {
+          "name": "Prompt history",
+          "tech": "Next.js + Postgres",
+          "description": "Commits, word-level diffs, rollback and forks for every agent."
+        },
+        {
+          "name": "Behavioral diff",
+          "tech": "Gemini / OpenAI / Anthropic",
+          "description": "An LLM writes a realistic test message from the prompt, both versions answer it, and you compare the outputs side by side."
+        },
+        {
+          "name": "Regression checks",
+          "tech": "LLM judge",
+          "description": "Exact-match tests kept flagging harmless paraphrases, so I switched to a temperature-0 judge with a deterministic fallback when the judge's output is malformed."
+        },
+        {
+          "name": "Storage",
+          "tech": "Prisma + Neon",
+          "description": "Moving from localStorage to Postgres surfaced real multi-writer races. I replaced a delete-and-recreate save with per-agent upserts and handled concurrent first-visit seeding. API keys stay in the browser on purpose, so a database leak can't expose them."
+        }
+      ],
+      "metrics": [
+        "78 tests across 15 files",
+        "Built in about 26 hours",
+        "Live: forge-theta-two.vercel.app"
+      ]
+    }
+  },
+  {
+    "id": "vaultscope",
+    "slug": "vaultscope",
+    "name": "VaultScope",
+    "badge": "research",
+    "description": "IPsec VPN analyzer for Smart India Hackathon 2026 (NTRO problem statement). I built most of the analysis core: the IKEv1/v2 parser that rebuilds each session's crypto negotiation, the ingestion and flow-feature stages, both classifiers, and part of the CVE-linked rules engine. The traffic classifier, which guesses what's running inside an encrypted tunnel, went from 0.79 to 0.98 macro-F1 on the team's dataset.",
+    "stack": [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "tshark",
+      "pyshark",
+      "FastAPI"
+    ],
+    "year": "2026",
+    "meta": "SIH 2026 · team",
+    "link": null,
+    "github": "https://github.com/shivansh193/vaultscope",
+    "deepdive": null
   },
   {
     "id": "wtp-pricing",
     "slug": "wtp-pricing",
     "name": "WTP Dynamic Pricing",
     "badge": "live",
-    "description": "Real-time checkout personalization layer for Indian e-commerce, sitting between a merchant's checkout and Razorpay. Estimates willingness-to-pay from behavioral signals and adjusts price and offer in under 200ms. LightGBM WTP regressor (R² ≈ 0.91) and conversion classifier (AUC ≈ 0.72), SHAP-explained decisions, and guardrails so low-trust buyers never pay above list. Razorpay Buildathon 2026, Track 01.",
+    "description": "Checkout pricing that adapts to willingness to pay, sitting between a merchant's checkout and Razorpay. It decides price and offer in under 200 ms, explains each decision with SHAP, and never charges a low-trust buyer more than list price. LightGBM regressor R² ≈ 0.91, conversion classifier AUC ≈ 0.72. Razorpay Buildathon 2026, Track 01.",
     "stack": [
       "Python",
       "FastAPI",
       "LightGBM",
       "SHAP",
       "Next.js",
-      "Redis",
-      "PostgreSQL"
+      "Redis"
     ],
     "year": "2026",
     "meta": "Razorpay Buildathon '26",
@@ -192,24 +353,78 @@
     "deepdive": null
   },
   {
-    "id": "vaultscope",
-    "slug": "vaultscope",
-    "name": "VaultScope",
+    "id": "amazon-ml",
+    "slug": "amazon-ml",
+    "name": "Amazon ML Challenge",
     "badge": "research",
-    "description": "AI-powered IPsec VPN protocol analyzer for SIH 2026 (SIH26160, NTRO), built as a team. I built most of the analysis core: the IKEv1/v2 parser that reconstructs each session's crypto negotiation, the ingestion and ESP flow-feature stages, the protocol and traffic-type classifiers, and part of the CVE-linked rules engine. On the team's 300-capture dataset (6 traffic classes), the traffic classifier went from 0.79 to 0.98 macro-F1.",
+    "description": "Entity resolution for Amazon ML Challenge 2026: match messy business records from two sources to a clean reference set, with no external data and models under 8B parameters. A fine-tuned mBERT bi-encoder retrieves candidates through FAISS and a DistilBERT cross-encoder re-ranks them. I led a team of three over a three-day sprint. Final leaderboard: 0.961 macro F0.5.",
     "stack": [
       "Python",
-      "scikit-learn",
-      "XGBoost",
-      "tshark",
-      "pyshark",
-      "FastAPI",
-      "Docker"
+      "PyTorch",
+      "mBERT",
+      "FAISS",
+      "cross-encoder"
     ],
     "year": "2026",
-    "meta": "SIH 2026 · team",
-    "link": "https://github.com/shivansh193/vaultscope",
-    "github": "https://github.com/shivansh193/vaultscope",
+    "meta": "team of 3 · I led",
+    "link": null,
+    "github": null,
+    "deepdive": null
+  },
+  {
+    "id": "doc-pipeline",
+    "slug": "doc-pipeline",
+    "name": "Document Pile System",
+    "badge": "research",
+    "description": "A hiring assignment for an AI document company. It takes a pile of related contracts, extracts facts that must appear near-verbatim in the source, flags conflicts between documents, and puts every change behind a human approval step. People use a review UI and agents drive it over MCP. Extraction scored P 0.845 / R 0.740 on 18 CUAD contracts.",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "DBOS",
+      "Postgres",
+      "MCP"
+    ],
+    "year": "2026",
+    "meta": "take-home",
+    "link": null,
+    "github": null,
+    "deepdive": null
+  },
+  {
+    "id": "tool-graph",
+    "slug": "tool-graph",
+    "name": "Tool Dependency Graph",
+    "badge": "research",
+    "description": "A hiring assignment for an agent-tooling company. It reads a catalog of tool schemas and works out which action produces an id that another action needs, then draws the graph. Every edge comes from the schemas. It ignores parameters like account_id that almost every tool takes, and rejects circular edges where a tool needs the very id it claims to produce.",
+    "stack": [
+      "TypeScript",
+      "Node.js",
+      "Graphviz",
+      "GitHub Actions"
+    ],
+    "year": "2026",
+    "meta": "take-home",
+    "link": null,
+    "github": null,
+    "deepdive": null
+  },
+  {
+    "id": "contract-watchdog",
+    "slug": "contract-watchdog",
+    "name": "Contract Watchdog",
+    "badge": "research",
+    "description": "An agent that watches a small business's contracts and only pulls in a human for a real decision, like a renewal inside its notice window or a price jump. In a live test the model re-notified on a contract it had just flagged and made up a reason, so I moved the dedup check into the tool's code with a regression test. It drafts emails but can't send them. 14 tests.",
+    "stack": [
+      "Python",
+      "Strands Agents",
+      "Gemini",
+      "Next.js"
+    ],
+    "year": "2026",
+    "meta": "hackathon · 10 hours",
+    "link": null,
+    "github": "https://github.com/shivansh193/contract-watchdog-agent",
     "deepdive": null
   },
   {
@@ -217,7 +432,7 @@
     "slug": "cash-flow-oracle",
     "name": "Cash Flow Oracle",
     "badge": "research",
-    "description": "Settlement forecasting for merchants: GARCH(1,1) + HMM regime detection + Prophet for 30–60 day projections with confidence intervals, plus credit recommendations and stress-period detection. Razorpay Buildathon 2026, Track 04.",
+    "description": "Settlement forecasting for merchants, 30 to 60 days out with confidence intervals. GARCH(1,1) handles volatility, an HMM spots regime shifts, and Prophet does the trend. It also flags stress periods and suggests credit before a crunch. Razorpay Buildathon 2026, Track 04.",
     "stack": [
       "Python",
       "GARCH",
@@ -227,103 +442,162 @@
     "year": "2026",
     "meta": "Razorpay Buildathon '26",
     "link": null,
-    "github": "https://github.com/shivansh193/wtp-dynamic-pricing-engine",
+    "github": "https://github.com/shivansh193/wtp-dynamic-pricing-engine/tree/master/cash-flow-oracle",
     "deepdive": null
+  },
+  {
+    "id": "pacer",
+    "slug": "pacer",
+    "name": "PACER",
+    "badge": "research",
+    "description": "Can epoch-based memory reclamation for lock-free data structures adapt to workload pressure? I built it in C++ and Rust and benchmarked it against token4 (PPoPP '24). My early 10–22% speedup turned out to be a use-after-free in my own code. After the fix it ties the baseline, and the repo shows exactly how I found out.",
+    "stack": [
+      "C++",
+      "Rust",
+      "loom",
+      "setbench"
+    ],
+    "year": "2026",
+    "meta": "OSS · negative result",
+    "link": null,
+    "github": "https://github.com/shivansh193/pacer",
+    "deepdive": {
+      "tagline": "An idea I tested until it either held up or didn't. It didn't, and the write-up says so.",
+      "overview": "PACER asks whether epoch-based reclamation can adapt how aggressively it frees memory based on load. I implemented it twice, as a C++ reclaimer for Brown's setbench and as a Rust core from scratch, then stress-tested both on Linux.",
+      "why": "The first numbers showed a 10–22% win and I didn't believe them. More stress testing found a use-after-free in my reclaimer. A tie with the receipts is worth more than a speedup that crashes 6 runs out of 10.",
+      "components": [
+        {
+          "name": "C++ reclaimer",
+          "tech": "C++ + setbench",
+          "description": "A drop-in reclaimer extending token4. It freed the epoch bag while it was still being written to: heap corruption in 6 of 10 runs at 16 threads. After the fix, 20 of 20 clean runs."
+        },
+        {
+          "name": "Rust core",
+          "tech": "Rust + loom",
+          "description": "Tier selection with hysteresis and snapshot coalescing. Tests and the loom model checker caught a livelock and a torn read. Both are fixed and covered by regression tests."
+        },
+        {
+          "name": "Backlog tracking",
+          "tech": "rdtsc histograms",
+          "description": "Watching retired-node backlog, not just throughput, exposed an unbounded leak: 1.5M retired nodes vs 255 for DEBRA. Fixed by splitting per-op and per-window reclamation."
+        }
+      ],
+      "metrics": [
+        "After the fix: 0.93–1.03× vs token4, a tie",
+        "Free-count sweep: K=1 best everywhere; K=64 cost up to 35% throughput",
+        "3 concurrency bugs found and fixed, each with a regression test",
+        "Raw CSVs behind every number are in the repo"
+      ]
+    }
   },
   {
     "id": "synthetic-market-rl",
     "slug": "synthetic-market-rl",
     "name": "Synthetic Market RL",
     "badge": "research",
-    "description": "Synthetic financial market environment for LLM agent evaluation. Uses GARCH(1,1) volatility clustering and Hidden Markov regime switching — simulates dynamics rather than replaying data, making lookahead bias structurally impossible. Three difficulty tiers, 50+ news headline templates via Poisson shocks, FastAPI server, Docker deployment.",
+    "description": "A market environment for testing trading agents that simulates prices instead of replaying history, so look-ahead bias can't sneak in. GARCH(1,1) gives volatility clustering, an HMM switches regimes, and Poisson-timed news shocks move correlated assets together. Three difficulty tiers, served over FastAPI in Docker.",
     "stack": [
       "Python",
       "FastAPI",
       "Docker",
-      "OpenAI Gym",
+      "Gym",
       "GARCH",
       "HMM"
     ],
     "year": "2026",
     "meta": "OSS · hackathon",
-    "link": "https://github.com/shivansh193/open-env-hack",
+    "link": null,
     "github": "https://github.com/shivansh193/open-env-hack",
     "deepdive": {
-      "tagline": "Synthetic financial market environment that simulates dynamics rather than replaying history — lookahead bias is structurally impossible.",
-      "overview": "Most backtesting environments replay historical data, which allows subtle forms of lookahead bias that aren't always obvious. I built an environment that simulates market dynamics from statistical properties instead, making lookahead bias impossible by construction.",
-      "why": "Standard backtesting environments either use historical data (lookahead risk) or oversimplify dynamics. I wanted something that could be used to honestly evaluate trading agents without the subtle leakage that makes backtest results look better than they are.",
+      "tagline": "A trading environment that generates the market instead of replaying it, so the agent can't peek at the future.",
+      "overview": "Most backtesting environments replay historical data, which leaks the future in ways that are easy to miss. This one simulates market dynamics from statistical properties, so the agent only ever sees what has happened so far.",
+      "why": "I kept seeing agents look brilliant on replayed data and fall apart live. Simulation doesn't fix every problem, but it removes the one that bit me most.",
       "components": [
         {
-          "name": "Market Engine",
+          "name": "Market engine",
           "tech": "Python + NumPy",
-          "description": "GARCH(1,1) volatility clustering + Hidden Markov regime switching. Simulates realistic market dynamics including volatility clusters, trend regimes, and mean reversion. Because it simulates rather than replays, lookahead bias is structurally impossible."
+          "description": "GARCH(1,1) volatility clustering plus hidden-Markov regime switching: volatility clusters, trends and mean reversion."
         },
         {
-          "name": "Three Difficulty Tiers",
-          "tech": "OpenAI Gym API",
-          "description": "Tier 1: Single-asset trend following. Tier 2: Dual-asset regime navigation with guaranteed regime switches. Tier 3: Four-asset portfolio-under-stress with hard drawdown termination."
+          "name": "Difficulty tiers",
+          "tech": "Gym API",
+          "description": "Tier 1 is single-asset trend following. Tier 2 is two assets with guaranteed regime switches. Tier 3 is a four-asset portfolio under stress with a hard drawdown stop."
         },
         {
-          "name": "News Shock System",
+          "name": "News shocks",
           "tech": "Poisson process",
-          "description": "50+ headline templates with Poisson-timed delivery. Cholesky correlation sampling for correlated multi-asset moves during news events."
+          "description": "50+ headline templates arrive at Poisson-timed intervals, with Cholesky sampling so correlated assets move together."
         },
         {
           "name": "Deployment",
           "tech": "FastAPI + Docker",
-          "description": "FastAPI REST server with full Docker deployment for easy reproduction. Full validation suite to ensure environment correctness across all tiers."
+          "description": "A REST server in Docker with a validation suite for every tier."
         }
       ],
       "metrics": [
         "GARCH(1,1) + HMM regime switching",
-        "3 difficulty tiers with distinct market regimes",
-        "50+ news headline templates with Poisson timing",
-        "Cholesky correlation sampling for multi-asset correlation",
-        "Lookahead bias structurally impossible by design"
+        "3 difficulty tiers",
+        "50+ news templates on Poisson timing",
+        "Correlated multi-asset moves via Cholesky sampling"
       ]
     }
   },
   {
-    "id": "chainedthought",
-    "slug": "chainedthought",
-    "name": "ChainedThought",
-    "badge": "live",
-    "description": "Multi-agent deep research system built in late 2024 — predates and mirrors what commercial 'deep research' products now do. Takes a complex query, spins up N specialized sub-agents (economics, funding, startups, technology, etc.), each researches from their domain perspective. Orchestrator synthesizes all perspectives into structured output.",
+    "id": "moe-residency",
+    "slug": "moe-residency",
+    "name": "MoE Expert Residency",
+    "badge": "research",
+    "description": "Can a phone keep a small set of experts in memory and still run a mixture-of-experts model well? I pre-registered the claims first; the analysis scripts refuse to give a verdict otherwise. On OLMoE-1B-7B, experts concentrated enough for code, math, arXiv and German text, and not for biomedical or general web text. On IBM Granite, 3 of 5 pre-registered claims held.",
     "stack": [
       "Python",
-      "LLM APIs",
-      "Agent Orchestration"
+      "PyTorch",
+      "OLMoE",
+      "Granite",
+      "Kaggle GPUs"
     ],
-    "year": "2024",
-    "meta": "OSS",
+    "year": "2026",
+    "meta": "pre-registered study",
     "link": null,
     "github": null,
+    "deepdive": null
+  },
+  {
+    "id": "snuxplore",
+    "slug": "snuxplore",
+    "name": "SNUXplore",
+    "badge": "live",
+    "description": "The campus app for Shiv Nadar University. I led all the tech as one of three project leads on a team of about 23 (most of the team ran marketing and on-ground work), and I'm the largest code contributor. 30,000+ uses in its first week. A RAG layer answers questions about courses, professors and campus. Now on v4.",
+    "stack": [
+      "Next.js",
+      "Gemini",
+      "LangChain",
+      "RAG"
+    ],
+    "year": "2024 →",
+    "meta": "30K+ uses in week 1 · tech lead",
+    "link": "https://snu-xplore-six.vercel.app",
+    "github": null,
     "deepdive": {
-      "tagline": "Multi-agent deep research system built before commercial deep research products existed — specialized sub-agents plus orchestrated synthesis.",
-      "overview": "Built in late 2024, ChainedThought implements the multi-agent research pattern: spin up domain-specialized sub-agents, let each research from their perspective, orchestrate synthesis. This pattern is now the standard architecture for 'deep research' products. ChainedThought was built before that pattern became mainstream.",
-      "why": "Deep research on a complex question requires multiple perspectives — economics, technology, market, regulatory. A single-agent system optimizes for one perspective and misses the rest. Built in late 2024, before OpenAI and Perplexity shipped similar products in early 2025.",
+      "tagline": "One campus app instead of five broken ones. 30,000+ uses in its first week.",
+      "overview": "SNUXplore started as a course planner and grew into the place students go for courses, professors, food and campus info. I led all the tech as one of three project leads on a team of about 23, most of whom ran marketing and on-ground work. It's now on v4.",
+      "why": "SNU's tools were scattered and slow. Finding which courses were open, who taught what or what the mess was serving meant asking around. The first week settled whether that was a real problem.",
       "components": [
         {
-          "name": "Query Decomposition",
-          "tech": "LLM API",
-          "description": "Takes a complex query and decomposes it into domain-specific research questions. Spawns N specialized sub-agents — economics, funding, startups, technology, regulatory, etc."
+          "name": "Spike-ready backend",
+          "tech": "Caching + tuned queries",
+          "description": "Built for registration day, when the whole campus hits the app in the same few minutes."
         },
         {
-          "name": "Specialized Sub-Agents",
-          "tech": "Python + LLM APIs",
-          "description": "Each agent researches from their domain perspective with different priors, different tool access, and different evaluation criteria. They disagree by design — that's the point."
-        },
-        {
-          "name": "Orchestrator Agent",
-          "tech": "LLM API",
-          "description": "Synthesizes all sub-agent perspectives into a final structured output. Identifies agreements, contradictions, and gaps across domain perspectives. The disagreements are as informative as the agreements."
+          "name": "RAG answers",
+          "tech": "Gemini + LangChain",
+          "description": "Ask in plain English, like which CS electives a professor teaches, and get an answer pulled from campus documents."
         }
       ],
       "metrics": [
-        "Built Nov 2024 — before commercial deep research launched",
-        "N specialized sub-agents per query",
-        "Domain-specific agent priors and tool access",
-        "Structured synthesis with explicit contradiction tracking"
+        "30,000+ uses in the first week",
+        "Tech lead, one of 3 project leads, ~23-person team",
+        "Largest code contributor",
+        "Live: snu-xplore-six.vercel.app"
       ]
     }
   },
@@ -332,7 +606,7 @@
     "slug": "buildflow",
     "name": "BuildFlow",
     "badge": "live",
-    "description": "AI-assisted project management tool: ideation with context kept across sessions, MVP feature scoping, personalized task generation and Kanban tracking. Used at a college event, where it handled 500+ projects.",
+    "description": "An AI project manager that remembers your product between sessions. It helps you go from a rough idea to a scoped MVP, writes tasks sized to the team, and tracks them on a Kanban board. We used it at a college event, where it handled 500+ projects.",
     "stack": [
       "Next.js",
       "TypeScript",
@@ -341,137 +615,146 @@
     ],
     "year": "2025",
     "meta": "500+ projects · college event",
-    "link": null,
-    "github": null,
+    "link": "https://product-roadmap-beta.vercel.app",
+    "github": "https://github.com/shivansh193/buildFlow_Public",
     "deepdive": {
-      "tagline": "AI-assisted project management, from ambiguous idea to shipped product. Ran 500+ projects at a college event.",
-      "overview": "BuildFlow is a project management tool with AI help at each stage, from a rough idea to a shipped product. It was used at a college event, where it handled 500+ projects.",
-      "why": "Most PM tools assume you know what to build. LLMs lose context of your product between sessions, requiring constant re-explanation. BuildFlow maintains persistent product context and helps you figure out what to build before helping you build it.",
+      "tagline": "An AI project manager that doesn't forget your product the moment you close the tab.",
+      "overview": "BuildFlow keeps a persistent picture of your product and helps at each step: rough idea, MVP scope, tasks, tracking. We ran it at a college event, where it handled 500+ projects.",
+      "why": "I was tired of re-explaining my own product to an LLM every session. BuildFlow keeps that context so the AI can actually help with what to build next.",
       "components": [
         {
-          "name": "AI-Assisted Ideation",
-          "tech": "LLM APIs",
-          "description": "Context-aware ideation with retained context across sessions. The AI knows the project history and avoids suggesting things already tried."
+          "name": "Ideation with memory",
+          "tech": "Gemini",
+          "description": "Remembers the project's history and doesn't suggest things you've already tried."
         },
         {
-          "name": "MVP Scoping",
-          "tech": "LLM APIs + React",
-          "description": "Feature refinement for MVP scope. Helps teams distinguish core from nice-to-have. Generates prioritized feature lists based on impact/effort. Integrates Sonar API for market and competitive research."
+          "name": "MVP scoping",
+          "tech": "Gemini + React",
+          "description": "Separates core features from nice-to-haves and ranks them by impact and effort."
         },
         {
-          "name": "Personalized Task Generation",
-          "tech": "LLM APIs",
-          "description": "Task generation calibrated to team experience level. A task list for a senior engineer looks different from one for a junior — different granularity, different assumptions."
+          "name": "Task generation",
+          "tech": "Gemini",
+          "description": "Tasks sized to the team. A list for a senior engineer looks different from one for a beginner."
         }
       ],
       "metrics": [
         "500+ projects at a college event",
         "Context kept across sessions",
-        "Personalized task generation + Kanban"
+        "Task generation + Kanban tracking"
       ]
     }
   },
   {
-    "id": "snuxplore",
-    "slug": "snuxplore",
-    "name": "SNUXplore",
+    "id": "locus",
+    "slug": "locus",
+    "name": "Locus",
     "badge": "live",
-    "description": "Campus platform for Shiv Nadar University. I led all the tech as one of 3 project leads for a ~23-person team, and I'm the largest code contributor. 30,000+ uses in its first week; RAG-based LLM answers natural-language questions across campus data. Now on v4.",
+    "description": "A multiplayer canvas where people and an AI agent think together. The AI gets its own cursor, draws nodes and talks. The canvas is a typed JSON op log in Aurora DSQL streamed over SSE, so the agent reads structure instead of pixels. Built in about five days for the H0 hackathon run by Vercel and AWS.",
     "stack": [
       "Next.js",
-      "Gemini",
-      "LangChain",
-      "RAG"
+      "Konva",
+      "Aurora DSQL",
+      "Gemini"
     ],
-    "year": "2025",
-    "meta": "30K+ uses in week 1 · tech lead",
-    "link": "https://snu-xplore-six.vercel.app",
+    "year": "2026",
+    "meta": "H0 hackathon",
+    "link": "https://coframe-psi.vercel.app",
+    "github": null,
+    "deepdive": null
+  },
+  {
+    "id": "loom-boom-zoom",
+    "slug": "loom-boom-zoom",
+    "name": "loom-boom-zoom",
+    "badge": "live",
+    "description": "A Loom-style studio for demo videos that runs entirely in your browser: script, teleprompter, recording, compositing and export. Whisper transcribes locally and ffmpeg.wasm renders, so you don't need an account and your footage never leaves your machine.",
+    "stack": [
+      "Next.js",
+      "ffmpeg.wasm",
+      "Whisper",
+      "IndexedDB"
+    ],
+    "year": "2026",
+    "meta": "browser-only",
+    "link": "https://loom-boom-zoom.vercel.app",
+    "github": "https://github.com/shivansh193/loom-boom-zoom",
+    "deepdive": null
+  },
+  {
+    "id": "chainedthought",
+    "slug": "chainedthought",
+    "name": "ChainedThought",
+    "badge": "research",
+    "description": "A multi-agent research system I built in November 2024, a few months before the big deep-research products shipped. It splits a hard question into domain questions, sends each to a specialist agent, and an orchestrator merges the answers while keeping track of where the agents disagree.",
+    "stack": [
+      "Python",
+      "LLM APIs",
+      "Agent orchestration"
+    ],
+    "year": "2024",
+    "meta": "multi-agent research",
+    "link": null,
     "github": null,
     "deepdive": {
-      "tagline": "Campus platform for Shiv Nadar University: 30,000+ uses in its first week, with RAG-based natural-language answers.",
-      "overview": "SNUXplore is a campus platform for Shiv Nadar University. What started as a course planner grew into a campus information system. I led all the tech as one of 3 project leads for a ~23-person team (most of the team ran marketing and on-ground work), and I'm the largest code contributor. It's now on v4.",
-      "why": "SNU's existing tools were fragmented and slow. Students couldn't easily find which courses were available, which professors taught what, or where to eat. 30,000+ uses in the first week proved the pain point was real.",
+      "tagline": "Specialist agents argue a question from different angles, and the orchestrator keeps the disagreements.",
+      "overview": "ChainedThought takes a complex question, breaks it into domain questions, and hands each to a specialist agent: economics, funding, technology, regulation and so on. An orchestrator writes the final answer and lists where the specialists agreed, where they contradicted each other, and what nobody covered.",
+      "why": "A single agent answers from one angle and misses the rest. I wanted the disagreements in the open, because that's usually where the interesting part of a question is.",
       "components": [
         {
-          "name": "Spike-Ready Backend",
-          "tech": "Caching + optimized queries",
-          "description": "Built for course-registration spikes, when the whole campus hits the system in the same few minutes."
+          "name": "Question decomposition",
+          "tech": "LLM API",
+          "description": "Splits the query into domain questions and spins up one agent per domain."
         },
         {
-          "name": "RAG Query System",
-          "tech": "Gemini + LangChain",
-          "description": "RAG-based LLM system for intelligent natural-language query resolution. Students can ask 'which professor's CS electives have the best peer ratings' and get accurate, sourced answers."
+          "name": "Specialist agents",
+          "tech": "Python + LLM APIs",
+          "description": "Each has its own priors, tools and criteria. They're supposed to disagree."
+        },
+        {
+          "name": "Orchestrator",
+          "tech": "LLM API",
+          "description": "Merges the answers and tracks agreements, contradictions and gaps."
         }
       ],
       "metrics": [
-        "30,000+ uses in the first week",
-        "Tech lead, one of 3 project leads, ~23-person team",
-        "Largest code contributor",
-        "RAG-based natural language query system",
-        "Live: snu-xplore-six.vercel.app"
+        "Built November 2024",
+        "One specialist agent per domain",
+        "Contradictions tracked explicitly in the final answer"
       ]
     }
   },
   {
-    "id": "pacer",
-    "slug": "pacer",
-    "name": "PACER",
-    "badge": "research",
-    "description": "Can epoch-based memory reclamation for lock-free data structures adapt to workload pressure? Built in C++ (a setbench drop-in extending token4, Kim et al. PPoPP '24) and Rust (with loom model-checked tests). Stress testing showed the original 10–22% speedup was a use-after-free bug; once fixed, PACER ties the baseline. The repo keeps the receipts.",
+    "id": "newsocr",
+    "slug": "newsocr",
+    "name": "NewsOCR / BookOCR",
+    "badge": "archived",
+    "description": "Tesseract pulls the text and a local LLM cleans it up and structures it. Cheaper than cloud OCR, and it holds up on real books and newspapers. The same OCR core later went into the Pactle quote engine for scanned RFQs.",
     "stack": [
-      "C++",
-      "Rust",
-      "loom",
-      "setbench",
-      "Concurrency"
+      "Python",
+      "Tesseract",
+      "Local LLM"
     ],
-    "year": "2026",
-    "meta": "OSS · negative result",
-    "link": "https://github.com/shivansh193/pacer",
-    "github": "https://github.com/shivansh193/pacer",
-    "deepdive": {
-      "tagline": "Adaptive epoch-based reclamation, tested until it either held up or didn't. It didn't, and the write-up says so.",
-      "overview": "PACER asks whether epoch-based reclamation can adapt its freeing policy to workload pressure. I implemented it twice, as a C++ reclaimer for Brown's setbench and as a from-scratch Rust core, then stress-tested and benchmarked it on Linux.",
-      "why": "The early numbers looked like a 10–22% win. I didn't trust them, so I kept stress-testing. The win turned out to be a use-after-free in my own reclaimer. Fixing it and publishing the tie is more useful than a result that crashes 6 runs out of 10.",
-      "components": [
-        {
-          "name": "C++ Reclaimer",
-          "tech": "C++ + setbench",
-          "description": "Drop-in reclaimer extending token4. Freed the epoch bag still being written to: heap corruption in 6 of 10 runs at 16 threads. After the fix, 20 of 20 clean runs."
-        },
-        {
-          "name": "Rust Core",
-          "tech": "Rust + loom",
-          "description": "Tier selection with hysteresis and a snapshot-coalescing coordinator. Tests and the loom model checker caught a livelock and a torn read; both fixed with regression tests."
-        },
-        {
-          "name": "Backlog Instrumentation",
-          "tech": "rdtsc histograms",
-          "description": "Tracking retired-node backlog, not just throughput, exposed an unbounded leak (1.5M retired nodes vs 255 for DEBRA). Fixed with a per-op / per-window split."
-        }
-      ],
-      "metrics": [
-        "After the fix: 0.93–1.03× vs token4 (a tie within noise)",
-        "Free-count sweep K ∈ {1..64}: K=1 best everywhere; K=64 cost up to 35% throughput",
-        "3 concurrency bugs found and fixed, all with regression tests",
-        "Raw CSVs behind every number in the repo"
-      ]
-    }
+    "year": "2025",
+    "meta": "reused in prod",
+    "link": null,
+    "github": "https://github.com/shivansh193/news_ocr",
+    "deepdive": null
   },
   {
     "id": "os-resource-mgmt",
     "slug": "os-resource-mgmt",
-    "name": "OS Resource Mgmt",
+    "name": "OS Resource Manager",
     "badge": "research",
-    "description": "Simulation of an advanced OS resource management system: Intelligent Process Scheduling with usage pattern analysis and ML-inspired dynamic priorities; Adaptive Memory Management with predictive allocation; Enhanced Security with layered protection, anomaly detection, and process trust scoring. Simulates 100–200 processes. Accompanied by IEEE paper.",
+    "description": "A simulated OS resource manager: scheduling that learns from usage patterns, predictive memory allocation, and process trust scoring for anomaly detection, tested on 100–200 simulated processes. Written up as an IEEE-style paper.",
     "stack": [
       "C++",
-      "Systems Programming"
+      "Systems programming"
     ],
     "year": "2025",
-    "meta": "IEEE paper",
+    "meta": "IEEE-style paper",
     "link": null,
-    "github": null,
+    "github": "https://github.com/shivansh193/OSProj",
     "deepdive": null
   },
   {
@@ -479,7 +762,7 @@
     "slug": "advisoryai",
     "name": "AdvisoryAI",
     "badge": "archived",
-    "description": ".NET engine for automated Word document template processing. Detects highlighted sections as fillable blanks, uses LLM or structured input to fill them optimally. Solves Word document automation at the template level rather than the content level. Built for a hackathon.",
+    "description": "A .NET engine for Word templates. It treats highlighted sections as blanks and fills them from an LLM or structured input, so a template works without anyone hand-editing it. Built at a hackathon.",
     "stack": [
       "C#",
       ".NET",
@@ -487,8 +770,60 @@
     ],
     "year": "2026",
     "meta": "hackathon",
-    "link": null,
+    "link": "https://advisoryaihack.vercel.app",
+    "github": "https://github.com/shivansh193/advisoryaihack",
+    "deepdive": null
+  },
+  {
+    "id": "petner",
+    "slug": "petner",
+    "name": "Petner",
+    "badge": "discontinued",
+    "description": "My first startup, started at 18: a social platform for pet owners. I rebuilt it four times in a year (petnerSocial, v1, Next, Plat) before shutting it down. It taught me more about distribution than any course.",
+    "stack": [
+      "React",
+      "Node.js",
+      "Firebase"
+    ],
+    "year": "Sep 2022 – Aug 2023",
+    "meta": "first startup · age 18",
+    "link": "https://petner-plat.vercel.app",
     "github": null,
+    "deepdive": null
+  },
+  {
+    "id": "debi",
+    "slug": "debi",
+    "name": "DeBi",
+    "badge": "archived",
+    "description": "An NFT launchpad that let a business issue its own fungible or non-fungible tokens, pitched as a digital IPO. Solidity contracts with a React front end, built in 2023.",
+    "stack": [
+      "Solidity",
+      "React",
+      "TypeScript",
+      "Web3.js"
+    ],
+    "year": "2023",
+    "meta": "archived",
+    "link": null,
+    "github": "https://github.com/shivansh193/DeBi",
+    "deepdive": null
+  },
+  {
+    "id": "delogi",
+    "slug": "delogi",
+    "name": "DeLogi",
+    "badge": "discontinued",
+    "description": "QR-based supply chain provenance: every scan at a production or logistics step adds to an audit trail for the product. Co-built as part of CatalystIQ. We shut it down because the Indian market wasn't ready for it.",
+    "stack": [
+      "TypeScript",
+      "QR codes",
+      "Supply chain"
+    ],
+    "year": "2024",
+    "meta": "co-built · discontinued",
+    "link": null,
+    "github": "https://github.com/RohanMathur2002/delogi",
     "deepdive": null
   },
   {
@@ -496,7 +831,7 @@
     "slug": "crypto-tracker",
     "name": "Crypto Tx Tracker",
     "badge": "archived",
-    "description": "Cryptocurrency transaction trail analyzer. Input any transaction, trace money flow to configurable depth across the chain — surfaces whether funds from flagged transactions were eventually withdrawn or mixed. Graph-based traversal. Meaningfully novel in 2023 before this became a standard compliance tool.",
+    "description": "Paste a transaction and it follows the money to whatever depth you set, so you can see whether funds from a flagged transaction were later withdrawn or mixed. Built in 2023, before this was a standard compliance feature.",
     "stack": [
       "Python",
       "TypeScript",
@@ -509,89 +844,20 @@
     "deepdive": null
   },
   {
-    "id": "debi",
-    "slug": "debi",
-    "name": "DeBi",
-    "badge": "archived",
-    "description": "NFT launchpad for businesses to launch their own tokens — fungible or non-fungible. Positioned as a digital IPO tool. Meaningfully early in 2023 before this became standard. Smart contracts in Solidity, React frontend with Web3 integration.",
-    "stack": [
-      "Solidity",
-      "React",
-      "TypeScript",
-      "Web3.js"
-    ],
-    "year": "2023",
-    "meta": "archived",
-    "link": null,
-    "github": null,
-    "deepdive": null
-  },
-  {
-    "id": "delogi",
-    "slug": "delogi",
-    "name": "DeLogi",
-    "badge": "discontinued",
-    "description": "QR code-based supply chain provenance system. Products carry a QR code scanned at every production/logistics touchpoint, creating an immutable audit trail. Built as part of CatalystIQ suite. Discontinued due to Indian market fit — the market wasn't ready.",
-    "stack": [
-      "TypeScript",
-      "QR/Barcode",
-      "Supply Chain"
-    ],
-    "year": "2024",
-    "meta": "discontinued",
-    "link": null,
-    "github": null,
-    "deepdive": null
-  },
-  {
-    "id": "petner",
-    "slug": "petner",
-    "name": "Petner",
-    "badge": "discontinued",
-    "description": "Pet-focused social platform. My first startup, started at 18. Rebuilt four times over a year — petnerSocial, petnerv1, petnerNext, petnerPlat. Demonstrated sustained product iteration and early entrepreneurial instinct.",
-    "stack": [
-      "React",
-      "Node.js",
-      "Firebase"
-    ],
-    "year": "Sept 2022 – Aug 2023",
-    "meta": "first startup · age 18",
-    "link": null,
-    "github": null,
-    "deepdive": null
-  },
-  {
     "id": "llm-news-bias",
     "slug": "llm-news-bias",
-    "name": "LLM News Bias Analyzer",
+    "name": "News Bias Analyzer",
     "badge": "archived",
-    "description": "Built an LLM from scratch for news article analysis. Three functions: summarization, political perspective classification (left/right bias detection), and alternate perspective discovery via search to flag when a story has contradicting coverage elsewhere. Multi-model pipeline with retrieval augmentation.",
+    "description": "Summarizes a news article, classifies its political lean, then searches for coverage of the same story from the other side and flags when it finds contradicting reports.",
     "stack": [
       "Python",
       "LLM APIs",
-      "Web Search"
+      "Web search"
     ],
     "year": "2025",
     "meta": "archived",
     "link": null,
     "github": null,
-    "deepdive": null
-  },
-  {
-    "id": "newsocr",
-    "slug": "newsocr",
-    "name": "NewsOCR / BookOCR",
-    "badge": "archived",
-    "description": "OCR pipeline using Tesseract for extraction, structured and cleaned by a local LLM. Cheaper than cloud OCR APIs, works well on real documents including books and news articles. The same OCR engine was reused in the Pactle quote generator for image-based RFQs.",
-    "stack": [
-      "Python",
-      "Tesseract",
-      "Local LLM"
-    ],
-    "year": "2025",
-    "meta": "reused in prod",
-    "link": "https://github.com/shivansh193/news_ocr",
-    "github": "https://github.com/shivansh193/news_ocr",
     "deepdive": null
   }
 ]

@@ -137,34 +137,11 @@ export default function Hero() {
             <span><b>PG</b> <span className="up">prod</span></span>
           </div>
 
-          <div className="mini-chart">
-            <div className="lbl">
-              <span>SHIPPING VELOCITY · 12W</span>
-              <span style={{ color: 'var(--green)' }}>▲ 22.4%</span>
-            </div>
-            <svg viewBox="0 0 240 60" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="lg" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stopColor="#00E5FF" stopOpacity=".4" />
-                  <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <path d="M0 50 L20 46 L40 48 L60 38 L80 40 L100 30 L120 32 L140 22 L160 26 L180 16 L200 18 L220 8 L240 12 L240 60 L0 60 Z" fill="url(#lg)" />
-              <path d="M0 50 L20 46 L40 48 L60 38 L80 40 L100 30 L120 32 L140 22 L160 26 L180 16 L200 18 L220 8 L240 12" fill="none" stroke="#00E5FF" strokeWidth="1.2" />
-              <g stroke="var(--line)" strokeWidth="1">
-                <line x1="0" y1="15" x2="240" y2="15" />
-                <line x1="0" y1="30" x2="240" y2="30" />
-                <line x1="0" y1="45" x2="240" y2="45" />
-              </g>
-              <circle cx="220" cy="8" r="2.5" fill="#00E5FF" />
-            </svg>
-          </div>
-
           <div className="quick">
             <div><b>4</b>papers</div>
-            <div><b>15+</b>projects</div>
-            <div><b>6+</b>stacks</div>
-            <div><b>∞</b>caffeine</div>
+            <div><b>29</b>projects</div>
+            <div><b>2nd</b>finverse &apos;26</div>
+            <div><b>2021</b>first shipped</div>
           </div>
         </div>
 

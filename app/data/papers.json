@@ -5,7 +5,7 @@
     "title": "Prediction Markets as Macro Derivatives: A Simulation Framework for Portfolio Hedging with Event Contracts",
     "venue": "FINVERSE 2026",
     "venueDetail": "March 2026 · 2nd place",
-    "abstract": "First empirical framework for evaluating institutional viability of event contract hedging. Models 383 Kalshi contracts across 58 macro events (Fed rate + CPI, 2022–2024) as binary derivatives using modified Black-Scholes on VIX surface. At 1% NAV: hedged Sharpe 0.538 vs unhedged 0.065. Quantifies basis risk (100% CPI accuracy, 0% FOMC — a market efficiency finding), hedge efficiency decay, and AUM ceiling ($148K current → $14.8M at 100× ADV). JEL: G11, G13, G14, G18.",
+    "abstract": "First empirical framework for evaluating institutional viability of event contract hedging. Models 383 Kalshi contracts across 58 macro events (Fed rate + CPI, 2022–2024) as binary derivatives using modified Black-Scholes on VIX surface. At 1% NAV: hedged Sharpe 0.538 vs unhedged 0.065. Quantifies basis risk (100% CPI accuracy, 0% FOMC, which is itself a market-efficiency finding), hedge efficiency decay, and AUM ceiling ($148K current → $14.8M at 100× ADV). JEL: G11, G13, G14, G18.",
     "tags": ["FINANCE · MACRO", "DERIVATIVES"],
     "author": "Kalra, S.",
     "metrics": ["2nd place · Finverse 2026", "383 contracts · 58 events", "Sharpe 0.538 vs 0.065"]
@@ -27,7 +27,7 @@
     "title": "Bitcoin Volatility and Regime Forecasting: A Comparative Analysis of Time Series Models",
     "venue": "IEEE-FORMAT · 2025",
     "venueDetail": "Working paper · sole author",
-    "abstract": "Comparative analysis of OLS, ARIMA, GARCH(1,1) on Bitcoin returns. Confirms Weak-Form EMH — 50% directional accuracy for OLS/ARIMA. GARCH(1,1): α=0.089, β=0.895, persistence=0.984. Crisis simulation across COVID-19 crash, Terra/Luna collapse, FTX bankruptcy, 2021 bull run. Bull/Bear regime classification showing asymmetric duration and 2–3× volatility differential.",
+    "abstract": "Comparative analysis of OLS, ARIMA, GARCH(1,1) on Bitcoin returns. Confirms Weak-Form EMH, 50% directional accuracy for OLS/ARIMA. GARCH(1,1): α=0.089, β=0.895, persistence=0.984. Crisis simulation across COVID-19 crash, Terra/Luna collapse, FTX bankruptcy, 2021 bull run. Bull/Bear regime classification showing asymmetric duration and 2–3× volatility differential.",
     "tags": ["FINANCE · CRYPTO", "TIME SERIES"],
     "author": "Kalra, S.",
     "metrics": ["GARCH persistence=0.984", "4 crisis regimes simulated"]

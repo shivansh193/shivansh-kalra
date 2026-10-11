@@ -521,3 +521,13 @@ footer {
 .dive-nav { padding: 32px 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); }
 .dive-nav a { font-family: var(--mono); font-size: 12px; color: var(--text-mute); transition: color .15s; }
 .dive-nav a:hover { color: var(--accent); }
+
+/* card overlay link + live/code links */
+.card-hit { position: absolute; inset: 0; z-index: 0; }
+.card > *:not(.card-hit) { position: relative; z-index: 1; pointer-events: none; }
+.card .card-links { display: flex; gap: 12px; font-family: var(--mono); font-size: 10.5px; pointer-events: auto; }
+.card .card-links a { color: var(--text-dim); text-decoration: none; border-bottom: 1px dashed var(--line-2); }
+.card .card-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* .research (section) also matches the research badge; undo its layout there */
+.badge.research { padding: 3px 7px; display: inline-block; }

@@ -9,10 +9,11 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "Built an <b>EHR automation system</b> on network-layer replay (Browserbase + Playwright), intercepting internal API calls instead of scraping the UI. Cut integration turnaround from weeks to <b>under 30 minutes</b>. Adopted company-wide.",
-      "Implemented <b>TOTP from RFC 4226/6238</b> (HMAC-SHA1) from scratch so automated workflows could get past authenticator prompts. Also adopted company-wide.",
-      "Led the technical expansion of <b>HealOS</b> (50+ US companies) into the <b>UAE</b>: built the integration layer for regional compliance and partner onboarding.",
-      "Found and flagged <b>3 critical security vulnerabilities</b> in an EHR platform used by 40%+ of US healthcare professionals."
+      "Built EHR automation on <b>network-layer replay</b> (Browserbase + Playwright). Instead of scraping the UI, it replays the EHR's own internal API calls. Integration turnaround went from weeks to <b>under 30 minutes</b>, and the approach was adopted company-wide.",
+      "Implemented <b>TOTP from RFC 4226/6238</b> (HMAC-SHA1) from scratch so automated workflows could get through authenticator prompts. Also adopted company-wide.",
+      "Led the technical side of taking <b>HealOS</b> (50+ US companies) into the <b>UAE</b>, building the integration layer for regional compliance and partner onboarding.",
+      "Found and reported <b>3 critical security vulnerabilities</b> in an EHR platform used by 40%+ of US healthcare professionals.",
+      "Tuned ElevenLabs model config, chunk scheduling and streaming for production voice agents across three portfolio products."
     ],
     "stack": [
       "Playwright",
@@ -38,9 +39,9 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "Spent the first weeks on the legacy platform learning the domain, then moved to the <b>generalised product</b>.",
-      "Built the generalised product's <b>frontend from its first commit</b>, and co-built the backend: lead management, SLA tracking and round-robin assignment.",
-      "My pre-hire assignment, a deterministic <b>RFQ-to-quote engine</b> (fuzzy search, multi-algorithm scoring, Tesseract OCR for image-based RFQs, approvals, multi-currency), was <b>integrated into Pactle's product</b>."
+      "Spent my first few weeks on the legacy platform learning the domain, then moved to the <b>generalised product</b>.",
+      "Built its <b>frontend from the first commit</b> and co-built the backend: lead management, SLA tracking and round-robin assignment.",
+      "The <b>RFQ-to-quote engine</b> I built as my pre-hire assignment (fuzzy search, multi-algorithm scoring, Tesseract OCR for scanned RFQs, approvals, multi-currency) was <b>integrated into Pactle's product</b>."
     ],
     "stack": [
       "Node.js",
@@ -66,9 +67,8 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "Built <b>North</b>, a content generation engine from scratch — owned DB schema, API design, and frontend end-to-end.",
-      "Collaborated with founding team on <b>distributed system architecture</b> decisions.",
-      "Rapidly iterated on features based on user feedback while maintaining code quality."
+      "Built <b>North</b>, a content generation engine, from scratch: DB schema, API design and frontend.",
+      "Worked with the founding team on <b>distributed system architecture</b> decisions."
     ],
     "stack": [
       "Next.js",
@@ -92,9 +92,8 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "Shipped <b>2 full-stack applications</b> using React, Node.js, MongoDB within 8-week sprints.",
-      "Built <b>CI/CD pipelines</b> with GitHub Actions reducing manual deployment effort by 70%.",
-      "Collaborated with 5+ engineers using Agile methodologies."
+      "Shipped <b>2 full-stack apps</b> (React, Node.js, MongoDB) in 8-week sprints, in a team of 5+ engineers.",
+      "Set up <b>CI/CD with GitHub Actions</b>, cutting manual deployment work by 70%."
     ],
     "stack": [
       "React",
@@ -118,9 +117,8 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "<b>Built entire platform from scratch</b> as founding engineer — first professional engineering role, at 17.",
-      "Led and recorded the company's first course on <b>Blockchain technology</b> as instructor. Authored the accompanying book.",
-      "Lessons learned: founder economics, distribution, and how to write code under pressure."
+      "<b>Built the whole platform</b> as founding engineer. My first paid engineering role, at 17.",
+      "Taught and recorded the company's first course on <b>blockchain</b>, and wrote the book that went with it."
     ],
     "stack": [
       "React",

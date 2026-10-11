@@ -25,6 +25,7 @@ const HEADER = `# Shivansh Kalra
 - GitHub: https://github.com/shivansh193
 - LinkedIn: https://linkedin.com/in/shivansh-kalra
 - Site: ${SITE}
+- Resume (PDF): ${SITE}/Shivansh_Kalra_Resume.pdf
 - Open to: founding-team roles, research, and conversations worth having.`
 
 function links(p: { link: string | null; github: string | null }) {

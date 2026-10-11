@@ -82,7 +82,7 @@ export default function Hero() {
             <a href="mailto:shivanshkalra796@gmail.com" className="btn">
               shivanshkalra796@gmail.com <span className="k">⌘</span>
             </a>
-            <a href="/Shivansh_Kalra_SWEResume_May25.pdf" target="_blank" rel="noopener noreferrer" className="btn">
+            <a href="/Shivansh_Kalra_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn">
               cv.pdf <span className="k">↗</span>
             </a>
           </div>

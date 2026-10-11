@@ -597,21 +597,48 @@
   {
     "id": "moe-residency",
     "slug": "moe-residency",
-    "name": "MoE Expert Residency",
+    "name": "MoE on a 4 GB GPU",
     "badge": "research",
-    "description": "Can a phone keep a small set of experts in memory and still run a mixture-of-experts model well? I pre-registered the claims first; the analysis scripts refuse to give a verdict otherwise. On OLMoE-1B-7B, experts concentrated enough for code, math, arXiv and German text, and not for biomedical or general web text. On IBM Granite, 3 of 5 pre-registered claims held.",
+    "description": "Mixture-of-experts models like OLMoE-1B-7B need about 14 GB of GPU memory. I measured what happens when only about 20% of the experts fit, on two models and a real 4 GB laptop GPU. The best setup keeps fp16 experts resident and serves misses from int4 copies: 0.24x the memory, HellaSwag 77.2 vs 77.4, and 2.2x faster than standard offloading.",
     "stack": [
       "Python",
       "PyTorch",
-      "OLMoE",
-      "Granite",
+      "Transformers",
+      "numba",
       "Kaggle GPUs"
     ],
     "year": "2026",
     "meta": "pre-registered study",
     "link": null,
     "github": null,
-    "deepdive": null
+    "deepdive": {
+      "tagline": "What it actually takes to run a mixture-of-experts LLM on a laptop GPU.",
+      "overview": "OLMoE-1B-7B and IBM's Granite MoE need far more memory than a typical laptop GPU has. I studied keeping only a fraction of the experts resident, across five pre-registered phases on Kaggle GPUs, and checked the results on GSM8K, HellaSwag and ARC-Challenge.",
+      "why": "Most claims about running big models on small hardware come from one benchmark and one model. I wanted numbers I could trust, so every hypothesis was committed to git before its data existed, and the analysis scripts refuse to give a verdict otherwise. The failures are in the report too.",
+      "components": [
+        {
+          "name": "Cache simulator",
+          "tech": "numba trace replay",
+          "description": "Replays real expert-routing traces under LRU, LFU and the offline-optimal Belady bound, so a caching policy can be judged before touching a GPU."
+        },
+        {
+          "name": "Live evaluator",
+          "tech": "PyTorch forward hooks",
+          "description": "Rewrites each MoE router's choices in place. Dozens of policies run side by side with the full model in one batch, so quality loss is measured exactly, with a noise floor of zero."
+        },
+        {
+          "name": "Mixed-precision fallback",
+          "tech": "fp16 + int4 experts",
+          "description": "Resident experts stay fp16; misses are served from int4 copies, plus two refinements found during the study."
+        }
+      ],
+      "metrics": [
+        "0.24x GPU memory, HellaSwag 77.2 vs 77.4",
+        "2.2x faster than standard offloading",
+        "Exact offloading is too slow at this budget, even under the Belady bound",
+        "Skipping missing experts breaks the model (GSM8K drops to 0%). Replicates on a second architecture"
+      ]
+    }
   },
   {
     "id": "snuxplore",

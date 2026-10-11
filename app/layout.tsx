@@ -17,8 +17,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Shivansh Kalra â€” Founding Engineer / Systems Architect',
+  title: 'Shivansh Kalra · Software Engineer',
   description: 'CS student at Shiv Nadar University. Founding engineer at multiple early-stage startups, builder of production systems used by tens of thousands of people, author of research papers. Building since 16.',
+  alternates: { types: { 'text/plain': '/llms-full.txt' } },
   keywords: ['Shivansh Kalra', 'Software Engineer', 'Full Stack', 'Systems Architect', 'SNU', 'Founding Engineer'],
 }
 

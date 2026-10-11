@@ -2,6 +2,13 @@
 
 import { useEffect, useRef } from 'react'
 
+// Born 2004-03-19; computed so the copy never goes stale.
+const AGE = (() => {
+  const now = new Date()
+  const hadBirthday = now.getMonth() > 2 || (now.getMonth() === 2 && now.getDate() >= 19)
+  return now.getFullYear() - 2004 - (hadBirthday ? 0 : 1)
+})()
+
 export default function Hero() {
   const typedRef = useRef<HTMLSpanElement>(null)
 
@@ -13,7 +20,7 @@ export default function Hero() {
       'Systems Architect',
       'Researcher',
       'Active since 2021',
-      '20yo. CS @ SNU.',
+      `${AGE}yo. CS @ SNU.`,
     ]
     let r = 0, i = 0, deleting = false
     let timer: ReturnType<typeof setTimeout>
@@ -59,7 +66,7 @@ export default function Hero() {
           </div>
 
           <p className="bio">
-            20-year-old CS student at <em>Shiv Nadar University</em>. Founding engineer at multiple
+            {AGE}-year-old CS student at <em>Shiv Nadar University</em>. Founding engineer at multiple
             early-stage startups, builder of production systems used by tens of thousands of
             people, and author of research papers in <em>quantitative finance</em>, <em>computer vision</em>,
             and <em>systems</em>. Building things since 16.

@@ -548,14 +548,14 @@
     "slug": "petner",
     "name": "Petner",
     "badge": "discontinued",
-    "description": "Pet-focused social platform. First startup, started at age 16. Built across multiple iterations over two years — petnerSocial, petnerv1, petnerNext, petnerPlat. Demonstrated sustained product iteration and early entrepreneurial instinct.",
+    "description": "Pet-focused social platform. My first startup, started at 18. Rebuilt four times over a year — petnerSocial, petnerv1, petnerNext, petnerPlat. Demonstrated sustained product iteration and early entrepreneurial instinct.",
     "stack": [
       "React",
       "Node.js",
       "Firebase"
     ],
     "year": "Sept 2022 – Aug 2023",
-    "meta": "first startup · age 16",
+    "meta": "first startup · age 18",
     "link": null,
     "github": null,
     "deepdive": null

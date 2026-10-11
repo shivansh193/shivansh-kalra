@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import projects from '@/app/data/projects.json'
 
 // Born 2004-03-19; computed so the copy never goes stale.
 const AGE = (() => {
@@ -139,7 +140,7 @@ export default function Hero() {
 
           <div className="quick">
             <div><b>4</b>papers</div>
-            <div><b>29</b>projects</div>
+            <div><b>{projects.length}</b>projects</div>
             <div><b>2nd</b>finverse &apos;26</div>
             <div><b>2021</b>first shipped</div>
           </div>

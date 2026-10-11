@@ -112,6 +112,58 @@
     }
   },
   {
+    "id": "shelfsense",
+    "slug": "shelfsense",
+    "name": "ShelfSense",
+    "badge": "research",
+    "description": "Queue-free billing from the CCTV a store already has. It spots which shelf slot a shopper's hand takes from, maps the slot to a product, and has the bill ready by the exit; shoppers only scan what it's unsure about. The interaction detector hits 0.80 frame mAP on MERL Shopping, and training on degraded video cut accuracy loss on a bad camera from 0.27 to 0.07 mAP.",
+    "stack": [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "FFmpeg",
+      "ResNet-18",
+      "YOLO-pose"
+    ],
+    "year": "2026",
+    "meta": "active research",
+    "link": null,
+    "github": null,
+    "deepdive": {
+      "tagline": "Queue-free billing using the CCTV a store already has.",
+      "overview": "ShelfSense watches which shelf slot each shopper's hand takes from, and the store's shelf map (planogram) turns that slot into a product. By the time the trolley reaches the exit, the bill is ready. Shoppers only scan items the system isn't sure about, and anything disputed goes to staff for a check, never automatic removal. It's software only, with no new cameras.",
+      "why": "Checkout queues at Indian supermarkets come down to one thing: billing happens at the end. Amazon's Just Walk Out needs a store rebuilt around it. Most Indian stores already have CCTV, so I started there. The same camera layer can later handle stock alerts, loss prevention and live online inventory.",
+      "components": [
+        {
+          "name": "Interaction detector",
+          "tech": "ResNet-18 + dilated temporal CNN",
+          "description": "Frozen ResNet-18 features feed a dilated temporal CNN with a boundary head, so it catches when a hand takes from a shelf and when. 0.80 frame mAP on the MERL Shopping benchmark, with timing within ±0.5 s."
+        },
+        {
+          "name": "CCTV robustness",
+          "tech": "FFmpeg degradation sweeps",
+          "description": "I swept bitrate, frame rate and resolution. Dropping to 8 fps costs almost nothing; resolution is what hurts. Training on degraded video cut the accuracy loss on a poor camera (230×170, 6 fps, 80 kbps) from 0.27 to 0.07 mAP."
+        },
+        {
+          "name": "Throughput",
+          "tech": "T4 GPU",
+          "description": "About 14 real-time camera streams per T4, with a path to cheap in-store edge boxes."
+        },
+        {
+          "name": "Market work",
+          "tech": "Research",
+          "description": "Teardowns of Just Walk Out, Zippin, Grabango (which shut down) and Wobot, Indian retail economics, and DPDP Act compliance."
+        }
+      ],
+      "metrics": [
+        "0.80 frame mAP on MERL Shopping, timing within ±0.5 s",
+        "Poor-camera accuracy loss cut from 0.27 to 0.07 mAP",
+        "~14 real-time streams per T4 GPU",
+        "Next: slot-level localisation on RetailAction, then real store pilots"
+      ]
+    }
+  },
+  {
     "id": "clipy",
     "slug": "clipy",
     "name": "clipy",

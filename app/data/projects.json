@@ -182,7 +182,7 @@
     "deepdive": {
       "tagline": "Turns a browser session into a replay script that pulls fresh tokens from live responses.",
       "overview": "clipy drives Chrome over the raw DevTools Protocol, records every request, then works out the data dependencies between them. You get a runnable Python script, a Mermaid diagram of the flow and a short report. It's the open-source version of Invariant's session-replay scan.",
-      "why": "At Attack Capital I automated integrations by replaying internal API calls instead of scraping the UI, and it cut the work from weeks to minutes. I did the dependency tracing by hand every time. clipy is the tool I wanted back then.",
+      "why": "At Attack Capital I automated integrations by replaying internal API calls instead of scraping the UI, and it cut the work from weeks to hours. I did the dependency tracing by hand every time. clipy is the tool I wanted back then.",
       "components": [
         {
           "name": "Recorder",

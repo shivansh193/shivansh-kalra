@@ -9,7 +9,7 @@
     "location": "Remote",
     "type": "past",
     "bullets": [
-      "Built EHR automation on <b>network-layer replay</b> (Browserbase + Playwright). Instead of scraping the UI, it replays the EHR's own internal API calls. Integration turnaround went from weeks to <b>under 30 minutes</b>, and the approach was adopted company-wide.",
+      "Built EHR automation on <b>network-layer replay</b> (Browserbase + Playwright). Instead of scraping the UI, it replays the EHR's own internal API calls. Integration build time went from weeks to <b>a few hours</b>, and the approach was adopted company-wide.",
       "Implemented <b>TOTP from RFC 4226/6238</b> (HMAC-SHA1) from scratch so automated workflows could get through authenticator prompts. Also adopted company-wide.",
       "Led the technical side of taking <b>HealOS</b> (50+ US companies) into the <b>UAE</b>, building the integration layer for regional compliance and partner onboarding.",
       "Found and reported <b>3 critical security vulnerabilities</b> in an EHR platform used by 40%+ of US healthcare professionals.",

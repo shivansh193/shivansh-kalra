@@ -4,6 +4,7 @@ import experiences from '@/app/data/experiences.json'
 import projects from '@/app/data/projects.json'
 import papers from '@/app/data/papers.json'
 import ventures from '@/app/data/ventures.json'
+import { writeups, writeupBody } from '@/lib/writeups'
 
 export const SITE = 'https://shivansh-kalra.vercel.app'
 
@@ -43,6 +44,7 @@ export function llmsIndex(): string {
     .map(e => `- ${e.company}, ${e.role} (${e.period})`)
     .join('\n')
   const res = papers.map(p => `- ${p.title} (${p.venue}, ${p.venueDetail})`).join('\n')
+  const wu = writeups.map(w => `- [${w.title}](${SITE}/writeups/${w.slug}): ${w.summary}`).join('\n')
 
   return `${HEADER}
 
@@ -56,6 +58,9 @@ ${proj}
 
 ## Research
 ${res}
+
+## Write-ups
+${wu}
 `
 }
 
@@ -106,6 +111,11 @@ ${v.description}`
     return s
   }).join('\n\n')
 
+  const wu = writeups.map(w => `### ${w.title} (${w.date})
+${SITE}/writeups/${w.slug}
+
+${writeupBody(w.slug).replace(/\]\((\/[^)]+)\)/g, `](${SITE}$1)`)}`).join('\n\n')
+
   return `${HEADER}
 
 Education: Shiv Nadar University, Greater Noida, India. B.Tech in Computer Science, Aug 2023 to May 2027.
@@ -125,5 +135,9 @@ ${res}
 ## Ventures
 
 ${ven}
+
+## Write-ups
+
+${wu}
 `
 }

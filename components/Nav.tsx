@@ -80,6 +80,7 @@ export default function Nav() {
         <li><a href="#research" data-navlink onClick={handleAnchor}>research</a></li>
         <li><a href="#ventures" data-navlink onClick={handleAnchor}>ventures</a></li>
         <li><a href="#contact" data-navlink onClick={handleAnchor}>contact</a></li>
+        <li><Link href="/writeups">writeups</Link></li>
       </ul>
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
         <div className="meta">SNU · DEL · IST <span style={{ color: 'var(--green)', marginLeft: 8 }}>●</span></div>

@@ -116,6 +116,60 @@
     "slug": "shelfsense",
     "name": "ShelfSense",
     "badge": "research",
+    "description": "A shop's Ring camera keeps the bill: it sees what leaves each shelf, names it from the shop's own photos, tracks stock, and leaves anything unsure for a person to check at the exit. Product naming is 98.4% correct within a shelf of 5 products; finding takes on handheld clips is still weak (2 of 8). Built solo for the Amazon Developer Hackathon (Ring track).",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "aiortc",
+      "PyTorch",
+      "Qwen2.5-VL",
+      "SigLIP",
+      "YOLO11-pose",
+      "AWS EC2"
+    ],
+    "year": "2026",
+    "meta": "Amazon Dev Hackathon · Ring track",
+    "link": "https://www.youtube.com/watch?v=wqKQZixrNSY",
+    "github": null,
+    "deepdive": {
+      "tagline": "A shop's Ring camera keeps the bill, and leaves anything unsure for a person to check at the exit.",
+      "overview": "When a hand goes into a shelf zone empty and comes out holding something, that's a take, and the product is named by matching the hand crop against the shop's own photos. Put-backs flag the matching line. Uncertain lines are marked verify at exit; the system only adds or flags lines, only a person removes one, and every decision is logged. Shoppers watch their bill live from a per-session link, and between visits the camera reads how full each shelf is for restock alerts.",
+      "why": "Small shops already have a camera. The goal was billing and stock from that camera without ever guessing with someone's money.",
+      "components": [
+        {
+          "name": "Funnel",
+          "tech": "YOLO11n-pose + ByteTrack, Qwen2.5-VL-3B, SigLIP",
+          "description": "The cheap model on every frame (13-15 ms), one batched yes/no VLM question per shelf visit (~200 ms), and catalogue matching only on a take (49 ms), using only the products on that shelf."
+        },
+        {
+          "name": "vjev",
+          "tech": "open source, Apache-2.0",
+          "description": "Turns VLM answers into typed, calibrated decisions. Boxes reach 86.3% Acc@0.5 on RefCOCO, and it abstains on 93.8% of absent targets."
+        },
+        {
+          "name": "Ring integration",
+          "tech": "Ring Partner API + aiortc",
+          "description": "Device list, live view over WHEP pulled server-side (0.6-0.9 s setup, 1280x720 at 29 fps, about 10 fps analysed), the 30 s / 60 s live-view cap, HMAC-signed motion webhooks and account linking, tested on the Ring Developer Portal Playground."
+        },
+        {
+          "name": "Exit check and shopper view",
+          "tech": "FastAPI + vanilla JS",
+          "description": "Staff see each flagged line's evidence and keep or remove it with a note; shoppers can tap Not mine."
+        }
+      ],
+      "metrics": [
+        "Naming: 98.4% within a shelf of 5 products (81 products, 500 queries); 70% on CCTV-quality crops",
+        "Shelf watch: AUROC 0.88 on 484 shelf crops; 82.2% on held-out shelves, catching 92% of empty gaps",
+        "Ring: 3 of 3 live WHEP sessions connected and analysed",
+        "Not there yet: 2 of 8 takes found on handheld clips (1 false)"
+      ]
+    }
+  },
+  {
+    "id": "tillless",
+    "slug": "tillless",
+    "name": "TillLess",
+    "badge": "research",
     "description": "Queue-free billing from the CCTV a store already has. It spots which shelf slot a shopper's hand takes from, maps the slot to a product, and has the bill ready by the exit; shoppers only scan what it's unsure about. The interaction detector hits 0.80 frame mAP on MERL Shopping, and training on degraded video cut accuracy loss on a bad camera from 0.27 to 0.07 mAP.",
     "stack": [
       "Python",
@@ -126,12 +180,12 @@
       "YOLO-pose"
     ],
     "year": "2026",
-    "meta": "active research",
+    "meta": "research",
     "link": null,
     "github": null,
     "deepdive": {
       "tagline": "Queue-free billing using the CCTV a store already has.",
-      "overview": "ShelfSense watches which shelf slot each shopper's hand takes from, and the store's shelf map (planogram) turns that slot into a product. By the time the trolley reaches the exit, the bill is ready. Shoppers only scan items the system isn't sure about, and anything disputed goes to staff for a check, never automatic removal. It's software only, with no new cameras.",
+      "overview": "TillLess watches which shelf slot each shopper's hand takes from, and the store's shelf map (planogram) turns that slot into a product. By the time the trolley reaches the exit, the bill is ready. Shoppers only scan items the system isn't sure about, and anything disputed goes to staff for a check, never automatic removal. It's software only, with no new cameras. It was the CCTV research groundwork for ShelfSense.",
       "why": "Checkout queues at Indian supermarkets come down to one thing: billing happens at the end. Amazon's Just Walk Out needs a store rebuilt around it. Most Indian stores already have CCTV, so I started there. The same camera layer can later handle stock alerts, loss prevention and live online inventory.",
       "components": [
         {

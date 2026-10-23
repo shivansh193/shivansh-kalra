@@ -238,7 +238,8 @@ export default function ShelfSensePage() {
           <section id="interest" className={s.section} aria-labelledby="ss-interest">
             <div className={s.wrap}>
               <h2 id="ss-interest" className={s.h2}><span className={s.num}>06</span> Want ShelfSense in your shop, or want to build it with me?</h2>
-              <InterestForm accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? ''} />
+              {/* Web3Forms access keys are meant to be public (they only route submissions to the owner's inbox) */}
+              <InterestForm accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '652f9dab-eb85-400a-999e-91a44f6082cf'} />
             </div>
           </section>
         </main>

@@ -34,7 +34,8 @@ interface Project {
 
 export function generateStaticParams() {
   return projects
-    .filter((p) => p.deepdive !== null)
+    // shelfsense has its own page at app/projects/shelfsense
+    .filter((p) => p.deepdive !== null && p.slug !== 'shelfsense')
     .map((p) => ({ slug: p.slug }))
 }
 

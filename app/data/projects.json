@@ -373,7 +373,7 @@
     "slug": "forge",
     "name": "forge",
     "badge": "live",
-    "description": "Version control for AI agent prompts. Every edit gets a commit with a word-level diff, rollback and forks. Before you commit, it writes a realistic test message and runs the old and new prompt on it, so you see how the behavior changes before you keep the edit. 78 tests, built in about 26 hours.",
+    "description": "Version control for AI agent prompts. Every edit gets a commit with a word-level diff, rollback and forks. Before you commit, it writes a realistic test message and runs the old and new prompt on it, so you see how the behavior changes before you keep the edit. 78 tests, built in about 26 hours. Won the AI Innovation Excellence Award at the AI Builders Hackathon (one of 7 awards, 500+ projects).",
     "stack": [
       "TypeScript",
       "Next.js",
@@ -382,7 +382,7 @@
       "Vitest"
     ],
     "year": "2026",
-    "meta": "hackathon · 26 hours",
+    "meta": "AI Builders Hackathon · winner",
     "link": "https://forge-theta-two.vercel.app",
     "github": "https://github.com/shivansh193/forge",
     "deepdive": {
@@ -412,6 +412,7 @@
         }
       ],
       "metrics": [
+        "AI Innovation Excellence Award, AI Builders Hackathon 2026 (1 of 7 awards, 500+ projects)",
         "78 tests across 15 files",
         "Built in about 26 hours",
         "Live: forge-theta-two.vercel.app"

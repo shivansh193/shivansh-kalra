@@ -12,6 +12,7 @@ export interface ProjectCardData {
   link: string | null
   github: string | null
   deepdive: unknown | null
+  award?: boolean
 }
 
 function badgeClass(badge: string) {
@@ -27,7 +28,7 @@ export default function ProjectCard({ p }: { p: ProjectCardData }) {
   const href = p.deepdive ? `/projects/${p.slug}` : (p.link ?? p.github)
 
   return (
-    <div className="card">
+    <div className={p.award ? 'card card-award' : 'card'}>
       {href && (
         external
           ? <a className="card-hit" href={href} target="_blank" rel="noopener noreferrer" aria-label={p.name} />
@@ -35,7 +36,10 @@ export default function ProjectCard({ p }: { p: ProjectCardData }) {
       )}
       <div className="top">
         <div className="name">{p.name}</div>
-        <span className={badgeClass(p.badge)}>{p.badge}</span>
+        <span className="badges">
+          {p.award && <span className="badge winner">winner</span>}
+          <span className={badgeClass(p.badge)}>{p.badge}</span>
+        </span>
       </div>
       <div className="desc">{p.description}</div>
       <div className="stack">

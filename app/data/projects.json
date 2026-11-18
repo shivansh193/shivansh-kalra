@@ -4,6 +4,7 @@
     "slug": "earned-autonomy",
     "name": "Earned Autonomy",
     "badge": "live",
+    "award": true,
     "description": "Every merge request earns its own level of autonomy from evidence, and loses it exactly where production proves it wrong. Covers all 9 GitLab DevSecOps stages with five GitLab Duo agents; an agent's dependency fix went from advisory to fixed prod in 35 minutes with no human step. Won Most Stages Covered (US$5,000) at Life After Code, GitLab's Transcend hackathon (3,300+ participants).",
     "stack": [
       "Python",

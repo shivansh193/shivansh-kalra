@@ -354,6 +354,36 @@ h1.name .punct { color: var(--accent); }
 .card .arr { position: absolute; bottom: 14px; right: 16px; font-family: var(--mono); font-size: 11px; color: transparent; transition: color .15s; }
 .card:hover .arr { color: var(--accent); }
 
+/* award card: a slow gold light that travels around the border */
+@property --award-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+:root, [data-theme="dark"] { --gold: #E8B84A; --gold-hi: #FFE7A3; --gold-dim: #E8B84A22; }
+[data-theme="light"] { --gold: #B07D12; --gold-hi: #E2B23C; --gold-dim: #B07D1218; }
+.card .badges { display: flex; gap: 6px; flex-shrink: 0; }
+.badge.winner { color: var(--gold); border-color: var(--gold); background: var(--gold-dim); }
+.card-award { background: linear-gradient(160deg, var(--gold-dim), transparent 45%); }
+.card-award::before {
+  content: ''; position: absolute; inset: -1px; padding: 1.5px; pointer-events: none; z-index: 2;
+  background: conic-gradient(from var(--award-angle),
+    transparent 0deg, var(--gold) 50deg, var(--gold-hi) 80deg, var(--gold) 110deg, transparent 160deg,
+    transparent 180deg, var(--gold) 230deg, var(--gold-hi) 260deg, var(--gold) 290deg, transparent 340deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: award-spin 6s linear infinite;
+}
+.card-award::after {
+  content: ''; position: absolute; inset: -1px; pointer-events: none; z-index: 1;
+  box-shadow: 0 0 18px -4px var(--gold); opacity: .35;
+  animation: award-glow 3s ease-in-out infinite;
+}
+.card-award:hover { outline-color: var(--gold); }
+.card-award:hover .name, .card-award:hover .arr { color: var(--gold); }
+@keyframes award-spin { to { --award-angle: 360deg; } }
+@keyframes award-glow { 50% { opacity: .75; } }
+@media (prefers-reduced-motion: reduce) {
+  .card-award::before { animation: none; background: var(--gold); opacity: .6; }
+  .card-award::after { animation: none; }
+}
+
 @media (max-width: 980px) { .proj-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 600px) { .proj-grid { grid-template-columns: 1fr; } }
 

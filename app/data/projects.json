@@ -1,5 +1,58 @@
 [
   {
+    "id": "earned-autonomy",
+    "slug": "earned-autonomy",
+    "name": "Earned Autonomy",
+    "badge": "live",
+    "description": "Every merge request earns its own level of autonomy from evidence, and loses it exactly where production proves it wrong. Covers all 9 GitLab DevSecOps stages with five GitLab Duo agents; an agent's dependency fix went from advisory to fixed prod in 35 minutes with no human step. Won Most Stages Covered (US$5,000) at Life After Code, GitLab's Transcend hackathon (3,300+ participants).",
+    "stack": [
+      "Python",
+      "GitLab Duo",
+      "GitLab CI",
+      "FastAPI",
+      "Terraform",
+      "Cloud Run",
+      "Playwright"
+    ],
+    "year": "2026",
+    "meta": "GitLab Transcend · winner",
+    "link": "https://devpost.com/software/earned-autonomy-li8qxm",
+    "github": "https://github.com/shivansh193/earned-autonomy",
+    "deepdive": {
+      "tagline": "Autonomy that works like trust between people: earned per change, backed by evidence, lost where it fails.",
+      "overview": "Every merge request on the FastAPI full-stack template (backend, React frontend, Terraform-managed Cloud Run) gets evidence, a risk score and an autonomy level: Hands-off ships to production with no human, Supervised needs one approval, Assisted has a human drive each step, Blocked doesn't ship. After every release a monitor replays canary traffic against the new and previous revisions and rolls back on any difference, and each outcome goes into a trust ledger that recalibrates the thresholds.",
+      "why": "Small teams don't let automation ship to production on its own, and they're right not to: nothing tells them which automated decisions are safe. Pipelines are either always manual or always automatic.",
+      "components": [
+        {
+          "name": "Evidence",
+          "tech": "Python tools + GitLab CI",
+          "description": "58 backend tests and 62 Playwright UI tests, a replay of 166 recorded real requests, static reachability from HTTP routes to each vulnerable function with runtime hit counts, and a Terraform plan read at attribute level."
+        },
+        {
+          "name": "Duo agents",
+          "tech": "GitLab Duo Agent Platform flows",
+          "description": "Five agents (Planning, Triage, Infra, Autonomy Router, Rollback) add judgement the rules can't encode, and they can only ever raise risk."
+        },
+        {
+          "name": "Production monitor",
+          "tech": "Cloud Run",
+          "description": "Replays canary traffic against the new and previous revisions on the same prod data. One bad change was caught and rolled back in 3.3 s."
+        },
+        {
+          "name": "Trust ledger",
+          "tech": "GCS + public ledger page",
+          "description": "Clean releases halve per-area penalties and widen the Hands-off threshold (0.20 to 0.25 to 0.30 on its own); a failure on a route holds the next change to it at Supervised."
+        }
+      ],
+      "metrics": [
+        "Winner, Most Stages Covered (US$5,000), GitLab Transcend hackathon 2026",
+        "All 9 DevSecOps stages",
+        "Pre-registered benchmark: 10/12 as run, misses published and fixed, then 12/12",
+        "Docs-only MRs: 7.3 to 0.77 runner-minutes (-89%)"
+      ]
+    }
+  },
+  {
     "id": "invariant",
     "slug": "invariant",
     "name": "Invariant",

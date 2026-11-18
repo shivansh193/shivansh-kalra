@@ -92,11 +92,31 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 
-@media (max-width: 760px) {
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.menu-toggle { display: none; }
+
+@media (max-width: 860px) {
   .nav { padding: 0 16px; height: 52px; }
-  .nav ul { gap: 16px; font-size: 11px; }
-  .nav ul a::before { content: ""; }
   .nav .meta { display: none; }
+  .nav-actions { gap: 8px; }
+  .theme-toggle { width: 40px; height: 40px; }
+  .menu-toggle { display: flex; }
+  /* links become a drop-down panel under the bar */
+  .nav ul {
+    display: none;
+    position: absolute; top: 52px; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    font-size: 14px; padding: 4px 16px 12px;
+    box-shadow: 0 16px 32px rgba(0,0,0,.25);
+  }
+  .nav.menu-open ul { display: flex; }
+  .nav ul li { border-bottom: 1px dashed var(--line); }
+  .nav ul li:last-child { border-bottom: 0; }
+  .nav ul a { display: block; padding: 14px 0; }
+}
+@media (max-width: 380px) {
+  .logo > span:not(.dot) { font-size: 12px; }
 }
 
 /* ───── layout ───── */
@@ -229,8 +249,9 @@ h1.name .punct { color: var(--accent); }
 .quick div:last-child { border-right: 0; }
 .quick div b { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; font-weight: 500; }
 
+.hero > * { min-width: 0; }
 @media (max-width: 980px) {
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .hero .left { border-right: 0; border-bottom: 1px solid var(--line); padding: 32px 16px; }
   .hero .right { padding: 32px 16px; }
 }
@@ -589,3 +610,33 @@ footer {
 .wu-table th { color: var(--text-mute); font-weight: 500; letter-spacing: .04em; }
 .wu-table td { color: var(--text-dim); }
 .wu-table td b { color: var(--text); }
+
+/* ───── phone polish: readable small text, thumb-sized tap targets ───── */
+@media (max-width: 760px) {
+  .badge { font-size: 10px; padding: 4px 8px; }
+  .card { padding: 18px 16px; min-height: 0; }
+  .card .desc { font-size: 13.5px; }
+  .card .stack span, .dive-stack-row span { font-size: 11px; }
+  .card .meta, .stat .label, .stat .delta, .mini-chart .lbl, .quick div,
+  .v-line .vstatus, .foot-copy, .component-card .cc-tech, .dive-meta .dm { font-size: 11px; }
+  .card .card-links { font-size: 12.5px; gap: 8px; }
+  .card .card-links a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 10px; border: 1px solid var(--line-2); }
+  .card .arr { color: var(--text-mute); }
+
+  .dive-hero { padding: 88px 0 40px; }
+  .dive-crumb { font-size: 12px; margin-bottom: 24px; }
+  .dive-crumb a { display: inline-flex; align-items: center; min-height: 40px; }
+  .dive-meta { gap: 16px 24px; }
+  .dive-meta .btn { margin-left: 0 !important; }
+  .dive-section { padding: 36px 0; }
+  .component-card { padding: 18px 16px; }
+  .metric-item { font-size: 13px; padding: 14px 12px; }
+  .dive-nav { flex-wrap: wrap; gap: 8px; }
+  .dive-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+
+  .foot-links { flex-direction: column; align-items: flex-start; font-size: 14px; }
+  .foot-links .sep { display: none; }
+  .foot-links a { display: inline-flex; align-items: center; min-height: 44px; }
+  .btn { min-height: 44px; }
+}
+@media (max-width: 860px) { .logo { min-height: 40px; } }

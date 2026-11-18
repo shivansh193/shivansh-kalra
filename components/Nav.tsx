@@ -2,10 +2,23 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Nav() {
   const progressRef = useRef<HTMLDivElement>(null)
   const [dark, setDark] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  // section links only exist on the home page; elsewhere point back to it
+  const sec = (id: string) => (pathname === '/' ? `#${id}` : `/#${id}`)
+
+  // close the mobile menu on Escape (links close it in their own onClick)
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenuOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [menuOpen])
 
   // init theme from localStorage
   useEffect(() => {
@@ -42,7 +55,7 @@ export default function Nav() {
   useEffect(() => {
     const links = document.querySelectorAll<HTMLAnchorElement>('.nav a[data-navlink]')
     const sections = Array.from(links)
-      .map(a => document.querySelector<HTMLElement>(a.getAttribute('href') || ''))
+      .map(a => (a.hash ? document.getElementById(a.hash.slice(1)) : null))
       .filter(Boolean) as HTMLElement[]
 
     function pick() {
@@ -59,6 +72,7 @@ export default function Nav() {
 
   function handleAnchor(e: React.MouseEvent<HTMLAnchorElement>) {
     const href = e.currentTarget.getAttribute('href')
+    setMenuOpen(false)
     if (!href || !href.startsWith('#')) return
     const target = document.querySelector<HTMLElement>(href)
     if (!target) return
@@ -67,22 +81,22 @@ export default function Nav() {
   }
 
   return (
-    <nav className="nav">
+    <nav className={menuOpen ? 'nav menu-open' : 'nav'}>
       <div className="progress" ref={progressRef} />
-      <Link href="/" className="logo" style={{ textDecoration: 'none' }}>
+      <Link href="/" className="logo" style={{ textDecoration: 'none' }} onClick={() => setMenuOpen(false)}>
         <div className="mark">SK</div>
         <span>shivansh.kalra</span>
         <span className="dot" title="online" />
       </Link>
-      <ul>
-        <li><a href="#work" data-navlink onClick={handleAnchor}>work</a></li>
-        <li><a href="#projects" data-navlink onClick={handleAnchor}>projects</a></li>
-        <li><a href="#research" data-navlink onClick={handleAnchor}>research</a></li>
-        <li><a href="#ventures" data-navlink onClick={handleAnchor}>ventures</a></li>
-        <li><a href="#contact" data-navlink onClick={handleAnchor}>contact</a></li>
-        <li><Link href="/writeups">writeups</Link></li>
+      <ul id="nav-links">
+        <li><a href={sec('work')} data-navlink onClick={handleAnchor}>work</a></li>
+        <li><a href={sec('projects')} data-navlink onClick={handleAnchor}>projects</a></li>
+        <li><a href={sec('research')} data-navlink onClick={handleAnchor}>research</a></li>
+        <li><a href={sec('ventures')} data-navlink onClick={handleAnchor}>ventures</a></li>
+        <li><a href={sec('contact')} data-navlink onClick={handleAnchor}>contact</a></li>
+        <li><Link href="/writeups" onClick={() => setMenuOpen(false)}>writeups</Link></li>
       </ul>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+      <div className="nav-actions">
         <div className="meta">SNU · DEL · IST <span style={{ color: 'var(--green)', marginLeft: 8 }}>●</span></div>
         <a
           href="https://github.com/shivansh193"
@@ -114,6 +128,20 @@ export default function Nav() {
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
             </svg>
           )}
+        </button>
+        <button
+          type="button"
+          className="theme-toggle menu-toggle"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="nav-links"
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square">
+            {menuOpen
+              ? <><line x1="5" y1="5" x2="19" y2="19" /><line x1="19" y1="5" x2="5" y2="19" /></>
+              : <><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></>}
+          </svg>
         </button>
       </div>
     </nav>

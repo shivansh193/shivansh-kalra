@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
@@ -37,6 +38,20 @@ export function generateStaticParams() {
     // shelfsense has its own page at app/projects/shelfsense
     .filter((p) => p.deepdive !== null && p.slug !== 'shelfsense')
     .map((p) => ({ slug: p.slug }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const project = (projects as Project[]).find((p) => p.slug === slug)
+  if (!project) return {}
+  const title = `${project.name} · Shivansh Kalra`
+  const description = project.deepdive?.tagline ?? project.description
+  return {
+    title,
+    description,
+    openGraph: { type: 'article', siteName: 'Shivansh Kalra', title, description, url: `/projects/${project.slug}` },
+    twitter: { card: 'summary_large_image', title, description },
+  }
 }
 
 function badgeClass(badge: string) {

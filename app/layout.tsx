@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { JetBrains_Mono, Inter } from 'next/font/google'
 import './globals.css'
 
@@ -16,7 +16,18 @@ const inter = Inter({
   display: 'swap',
 })
 
+const SITE_DESCRIPTION = 'CS student at Shiv Nadar University. Founding engineer at multiple early-stage startups, builder of production systems used by tens of thousands of people, author of research papers. Building since 16.'
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://shivanshkalra.cv'),
+  openGraph: {
+    type: 'website',
+    siteName: 'Shivansh Kalra',
+    title: 'Shivansh Kalra · Software Engineer',
+    description: SITE_DESCRIPTION,
+    url: '/',
+  },
+  twitter: { card: 'summary_large_image' },
   title: 'Shivansh Kalra · Software Engineer',
   description: 'CS student at Shiv Nadar University. Founding engineer at multiple early-stage startups, builder of production systems used by tens of thousands of people, author of research papers. Building since 16.',
   alternates: { types: { 'text/plain': '/llms-full.txt' } },
